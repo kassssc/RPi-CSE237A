@@ -66,8 +66,8 @@ void body_big(SharedVariable* sv) {
 }
 
 void body_small(SharedVariable* sv) {
-	int big_sound = digitalRead(PIN_SMALL);
-	if (!counter) printf("big: %d\n", big_sound);
+	int small_sound = digitalRead(PIN_SMALL);
+	if (!counter) printf("small: %d\n", small_sound);
 }
 
 void body_touch(SharedVariable* sv) {
@@ -79,7 +79,7 @@ void body_rgbcolor(SharedVariable* sv) {
 		softPwmWrite(PIN_SMD_RED, 0xFF);
 		softPwmWrite(PIN_SMD_GRN, 0x00);
 		softPwmWrite(PIN_SMD_BLU, 0x00);
-	} else if (conter == 333) {
+	} else if (counter == 333) {
 		softPwmWrite(PIN_SMD_RED, 0x00);
 		softPwmWrite(PIN_SMD_GRN, 0xFF);
 		softPwmWrite(PIN_SMD_BLU, 0x00);
