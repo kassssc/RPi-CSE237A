@@ -4,8 +4,7 @@
 #include <softPwm.h>
 #include <stdint.h>
 
-static int state = 0;
-static int counter = 0;
+static int print = 0;
 
 void init_shared_variable(SharedVariable* sv) {
 	// You can initialize the shared variable if needed.
@@ -31,11 +30,12 @@ void init_sensors(SharedVariable* sv) {
 }
 
 void body_button(SharedVariable* sv) {
+	print = (print + 2)%1000;
 	// pressed = 0
 	// not pressed = 1
 	int pressed = !digitalRead(PIN_BUTTON);
 	if (pressed) sv->state = !sv->state;
-	printf("system is now: %s\n", sv->state? "running" : "paused");
+	if (print == 500) printf("system is now: %s\n", sv->state? "running" : "paused");
 }
 
 void body_threecolor(SharedVariable* sv) {
@@ -44,7 +44,6 @@ void body_threecolor(SharedVariable* sv) {
 	if (!sv->state) {
 		softPwmWrite(PIN_DIP_RED, 0x00);
 		softPwmWrite(PIN_DIP_BLU, 0x00);
-
 
 	// RED when small sound gives 1
 	} else if (sv->sound_small) {
@@ -60,12 +59,12 @@ void body_threecolor(SharedVariable* sv) {
 
 void body_big(SharedVariable* sv) {
 	sv->sound_big = digitalRead(PIN_BIG);
-	//if (!counter) printf("big: %d\n", sound_big);
+	if (print == 500) printf("big: %d\n", sv->sound_big);
 }
 
 void body_small(SharedVariable* sv) {
 	sv->sound_small = digitalRead(PIN_SMALL);
-	//if (!counter) printf("small: %d\n", sound_small);
+	if (print == 500) printf("small: %d\n", sv->sound_small);
 }
 
 void body_touch(SharedVariable* sv) {
@@ -125,12 +124,15 @@ void body_buzzer(SharedVariable* sv) {
 	if (sv->sound_big) {
 		buzzing = 1;
 		counter = 0;
+		printer("Buzzer activated\n");
 	}
 	if (buzzing) {
 		softToneWrite(PIN_BUZZER, 3500);
 		counter++;
+		printf("Buzzing: %d", counter);
 		// Buzzed for 0.5s already
 		if (counter > 500) {
+			printf("Buzzing stopped");
 			counter = 0;
 			buzzing = 0;
 		}
