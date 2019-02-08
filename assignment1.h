@@ -40,9 +40,9 @@
 typedef struct shared_variable {
 	int bProgramExit; // Once it is set to 1, the program will be terminated.
 	int state;				// 1 = running | 0 = pause
-	int sound_big			// Output of big sound sensor
-	int sound_small		// Output of small sound sensor
-	int touch					// Output of temperature touch sensor
+	int sound_big;			// Output of big sound sensor
+	int sound_small;		// Output of small sound sensor
+	int touch;					// Output of temperature touch sensor
 } SharedVariable;
 
 

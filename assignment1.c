@@ -1,6 +1,7 @@
 #include "assignment1.h"
 #include <stdio.h>
 #include <wiringPi.h>
+#include <softTone.h>
 #include <softPwm.h>
 #include <stdint.h>
 
@@ -13,7 +14,7 @@ void init_shared_variable(SharedVariable* sv) {
 
 void init_sensors(SharedVariable* sv) {
 	sv->state = 1;	// running
-	sv->sound_big = 0;
+	sv->sound_big = 0; 
 	sv->sound_small = 0;
 	sv->touch = 0;
 	// Init DIP RGB
@@ -25,17 +26,34 @@ void init_sensors(SharedVariable* sv) {
 	softPwmCreate(PIN_SMD_GRN, 0, 0xFF);
 	softPwmCreate(PIN_SMD_BLU, 0, 0xFF);
 
+	pinMode(PIN_BUTTON, INPUT);
+	pinMode(PIN_BIG, INPUT);
+	pinMode(PIN_SMALL, INPUT);
+	pinMode(PIN_TOUCH, INPUT);
+	pinMode(PIN_ALED, OUTPUT);
+	pinMode(PIN_BUZZER, OUTPUT);
+
 	digitalWrite(PIN_ALED, HIGH);
 	softToneCreate(PIN_BUZZER);
 }
 
 void body_button(SharedVariable* sv) {
-	print = (print + 2)%1000;
+	static int debounce = 0;
+	 static int debounce_counter = 0;
 	// pressed = 0
 	// not pressed = 1
 	int pressed = !digitalRead(PIN_BUTTON);
-	if (pressed) sv->state = !sv->state;
-	if (print == 500) printf("system is now: %s\n", sv->state? "running" : "paused");
+	if (pressed && !debounce) {
+		sv->state = !sv->state;
+		debounce = 1;
+	}
+	if (debounce) {
+		debounce_counter++;
+	}
+	if (debounce_counter >= 250) {
+		debounce = 0;
+		debounce_counter = 0;
+	}
 }
 
 void body_threecolor(SharedVariable* sv) {
@@ -59,12 +77,10 @@ void body_threecolor(SharedVariable* sv) {
 
 void body_big(SharedVariable* sv) {
 	sv->sound_big = digitalRead(PIN_BIG);
-	if (print == 500) printf("big: %d\n", sv->sound_big);
 }
 
 void body_small(SharedVariable* sv) {
 	sv->sound_small = digitalRead(PIN_SMALL);
-	if (print == 500) printf("small: %d\n", sv->sound_small);
 }
 
 void body_touch(SharedVariable* sv) {
@@ -109,7 +125,7 @@ void body_rgbcolor(SharedVariable* sv) {
 }
 
 void body_aled(SharedVariable* sv) {
-	if (state) {
+	if (sv->state) {
 		digitalWrite(PIN_ALED, HIGH);
 	} else {
 		digitalWrite(PIN_ALED, LOW);
@@ -124,15 +140,12 @@ void body_buzzer(SharedVariable* sv) {
 	if (sv->sound_big) {
 		buzzing = 1;
 		counter = 0;
-		printer("Buzzer activated\n");
 	}
 	if (buzzing) {
-		softToneWrite(PIN_BUZZER, 3500);
+		softToneWrite(PIN_BUZZER, 2000);
 		counter++;
-		printf("Buzzing: %d", counter);
 		// Buzzed for 0.5s already
 		if (counter > 500) {
-			printf("Buzzing stopped");
 			counter = 0;
 			buzzing = 0;
 		}
