@@ -34,56 +34,56 @@ void learn_workloads(SharedVariable* sv) {
 
 	// Button
 	start_time = get_current_time_us();
-	thread_button();
+	thread_button(sv);
 	end_time = get_current_time_us();
 	dur = end_time - start_time;
 	printf("button thread: %ld", dur);
 
 	// Three Color
 	start_time = get_current_time_us();
-	thread_threecolor();
+	thread_threecolor(sv);
 	end_time = get_current_time_us();
 	dur = end_time - start_time;
 	printf("RGB thread: %ld", dur);
 
 	// Big
 	start_time = get_current_time_us();
-	thread_big();
+	thread_big(sv);
 	end_time = get_current_time_us();
 	dur = end_time - start_time;
 	printf("big thread: %ld", dur);
 
 	// Small
 	start_time = get_current_time_us();
-	thread_small();
+	thread_small(sv);
 	end_time = get_current_time_us();
 	dur = end_time - start_time;
 	printf("small thread: %ld", dur);
 
 	// Touch
 	start_time = get_current_time_us();
-	thread_touch();
+	thread_touch(sv);
 	end_time = get_current_time_us();
 	dur = end_time - start_time;
 	printf("touch thread: %ld", dur);
 
 	// RGB Color
 	start_time = get_current_time_us();
-	thread_rgbcolor();
+	thread_rgbcolor(sv);
 	end_time = get_current_time_us();
 	dur = end_time - start_time;
 	printf("SMD RGB thread: %ld", dur);
 
 	// ALED
 	start_time = get_current_time_us();
-	thread_aled();
+	thread_aled(sv);
 	end_time = get_current_time_us();
 	dur = end_time - start_time;
 	printf("ALED thread: %ld", dur);
 
 	// Buzzer
 	start_time = get_current_time_us();
-	thread_buzzer();
+	thread_buzzer(sv);
 	end_time = get_current_time_us();
 	dur = end_time - start_time;
 	printf("buzzer thread: %ld", end_time - start_time);
