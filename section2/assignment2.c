@@ -19,7 +19,7 @@ void learn_workloads(SharedVariable* sv) {
 	// This function is executed before the scheduling simulation.
 	// You need to calculate the execution time of each thread here.
 
-	// Thread functions for workloads: 
+	// Thread functions for workloads:
 	// thread_button, thread_twocolor, thread_temp, thread_track,
 	// thread_touch, thread_rgbcolor, thread_aled, thread_buzzer
 
@@ -28,6 +28,64 @@ void learn_workloads(SharedVariable* sv) {
 
 	// Tip 2. You can get the current time here like:
 	// long long curTime = get_current_time_us();
+
+	long long start_time, end_time, dur;
+
+	// Button
+	start_time = get_current_time_us();
+	thread_button();
+	end_time = get_current_time_us();
+	dur = end_time - start_time;
+	printf("button thread: %ld", dur);
+
+	// Three Color
+	start_time = get_current_time_us();
+	thread_threecolor();
+	end_time = get_current_time_us();
+	dur = end_time - start_time;
+	printf("RGB thread: %ld", dur);
+
+	// Big
+	start_time = get_current_time_us();
+	thread_big();
+	end_time = get_current_time_us();
+	dur = end_time - start_time;
+	printf("big thread: %ld", dur);
+
+	// Small
+	start_time = get_current_time_us();
+	thread_small();
+	end_time = get_current_time_us();
+	dur = end_time - start_time;
+	printf("small thread: %ld", dur);
+
+	// Touch
+	start_time = get_current_time_us();
+	thread_touch();
+	end_time = get_current_time_us();
+	dur = end_time - start_time;
+	printf("touch thread: %ld", dur);
+
+	// RGB Color
+	start_time = get_current_time_us();
+	thread_rgbcolor();
+	end_time = get_current_time_us();
+	dur = end_time - start_time;
+	printf("SMD RGB thread: %ld", dur);
+
+	// ALED
+	start_time = get_current_time_us();
+	thread_aled();
+	end_time = get_current_time_us();
+	dur = end_time - start_time;
+	printf("ALED thread: %ld", dur);
+
+	// Buzzer
+	start_time = get_current_time_us();
+	thread_buzzer();
+	end_time = get_current_time_us();
+	dur = end_time - start_time;
+	printf("buzzer thread: %ld", end_time - start_time);
 }
 
 
@@ -51,6 +109,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// Also, do not make any interruptable / IO tasks in this function.
 	// You can use printfDBG instead of printf.
 
+	/*
 	// Sample scheduler: Round robin
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
@@ -72,5 +131,29 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
 	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
 
-    return sel;
+  return sel;
+	*/
+
+	// Schedule tasks that missed deadline earlier
+
+
+  long long earliest_deadline = 9223372036854775807; // max long long value
+  int chosen = -1;
+  int i;
+  for (i = 0; i < 8; i++) {
+  	if ( (workloadDeadlines[i] < earliest_deadline) && aliveTasks[i] ) {
+  		chosen = i;
+  		earliest_deadline = workloadDeadlines[chosen];
+  	}
+  }
+
+  if (chosen == -1) {
+  	// No alive tasks
+  }
+
+  TaskSelection sel;
+	sel.task = chosen;
+	sel.freq = 1;
+
+	return sel;
 }
