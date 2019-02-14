@@ -18,24 +18,6 @@
 #include "scheduler.h"
 #include "governor.h"
 
-#define thread_def(NAME) \
-int bExit_##NAME; \
-void* thread_##NAME(void* param) { \
-	SharedVariable* pV = (SharedVariable*) param; \
-	workload_##NAME(); \
-	body_##NAME(pV); \
-	bExit_##NAME = 1; \
-	return NULL; }
-
-thread_def(button)
-thread_def(threecolor)
-thread_def(big)
-thread_def(small)
-thread_def(touch)
-thread_def(rgbcolor)
-thread_def(aled)
-thread_def(buzzer)
-
 void signal_handler(int signum) {
 	finish_workload();
 	release_buffer(fileno(stdout));
