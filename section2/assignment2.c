@@ -31,62 +31,81 @@ void learn_workloads(SharedVariable* sv) {
 	// long long curTime = get_current_time_us();
 
 	long long start_time, end_time, dur;
+	int i;
+	for (i = 0; i < 8; i++) {
+		sv->avg_runtime[i] = 0;
+	}
 
-	// Button
-	start_time = get_current_time_us();
-	thread_button(sv);
-	end_time = get_current_time_us();
-	dur = end_time - start_time;
-	printf("button thread: %ld", dur);
+	for (i = 0; i < 15; i++) {
+		// Button
+		start_time = get_current_time_us();
+		thread_button(sv);
+		end_time = get_current_time_us();
+		dur = end_time - start_time;
+		sv->avg_runtime[0] += dur;
+		printf("button thread: %lld\n", dur);
 
-	// Three Color
-	start_time = get_current_time_us();
-	thread_threecolor(sv);
-	end_time = get_current_time_us();
-	dur = end_time - start_time;
-	printf("RGB thread: %ld", dur);
+		// Three Color
+		start_time = get_current_time_us();
+		thread_threecolor(sv);
+		end_time = get_current_time_us();
+		dur = end_time - start_time;
+		sv->avg_runtime[1] += dur;
+		printf("RGB thread: %lld\n", dur);
 
-	// Big
-	start_time = get_current_time_us();
-	thread_big(sv);
-	end_time = get_current_time_us();
-	dur = end_time - start_time;
-	printf("big thread: %ld", dur);
+		// Big
+		start_time = get_current_time_us();
+		thread_big(sv);
+		end_time = get_current_time_us();
+		dur = end_time - start_time;
+		sv->avg_runtime[2] += dur;
+		printf("big thread: %lld\n", dur);
 
-	// Small
-	start_time = get_current_time_us();
-	thread_small(sv);
-	end_time = get_current_time_us();
-	dur = end_time - start_time;
-	printf("small thread: %ld", dur);
+		// Small
+		start_time = get_current_time_us();
+		thread_small(sv);
+		end_time = get_current_time_us();
+		dur = end_time - start_time;
+		sv->avg_runtime[3] += dur;
+		printf("small thread: %lld\n", dur);
 
-	// Touch
-	start_time = get_current_time_us();
-	thread_touch(sv);
-	end_time = get_current_time_us();
-	dur = end_time - start_time;
-	printf("touch thread: %ld", dur);
+		// Touch
+		start_time = get_current_time_us();
+		thread_touch(sv);
+		end_time = get_current_time_us();
+		dur = end_time - start_time;
+		sv->avg_runtime[4] += dur;
+		printf("touch thread: %lld\n", dur);
 
-	// RGB Color
-	start_time = get_current_time_us();
-	thread_rgbcolor(sv);
-	end_time = get_current_time_us();
-	dur = end_time - start_time;
-	printf("SMD RGB thread: %ld", dur);
+		// RGB Color
+		start_time = get_current_time_us();
+		thread_rgbcolor(sv);
+		end_time = get_current_time_us();
+		dur = end_time - start_time;
+		sv->avg_runtime[5] += dur;
+		printf("SMD RGB thread: %lld\n", dur);
 
-	// ALED
-	start_time = get_current_time_us();
-	thread_aled(sv);
-	end_time = get_current_time_us();
-	dur = end_time - start_time;
-	printf("ALED thread: %ld", dur);
+		// ALED
+		start_time = get_current_time_us();
+		thread_aled(sv);
+		end_time = get_current_time_us();
+		dur = end_time - start_time;
+		sv->avg_runtime[6] += dur;
+		printf("ALED thread: %lld\n", dur);
 
-	// Buzzer
-	start_time = get_current_time_us();
-	thread_buzzer(sv);
-	end_time = get_current_time_us();
-	dur = end_time - start_time;
-	printf("buzzer thread: %ld", end_time - start_time);
+		// Buzzer
+		start_time = get_current_time_us();
+		thread_buzzer(sv);
+		end_time = get_current_time_us();
+		dur = end_time - start_time;
+		sv->avg_runtime[7] += dur;
+		printf("buzzer thread: %lld\n", end_time - start_time);
+	}
+
+	for (i = 0; i < 8; i++) {
+		sv->avg_runtime[i] = (avg_runtime[i] / 10.0) * 1.1;
+		printf("AVG runtime %d = %d", i, sv->avg_runtime[i]);
+	}
 }
 
 
@@ -135,16 +154,21 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
   return sel;
 	*/
 
-	// Schedule tasks that missed deadline earlier
-
-
   long long earliest_deadline = 9223372036854775807; // max long long value
   int chosen = -1;
   int i;
   for (i = 0; i < 8; i++) {
-  	if ( (workloadDeadlines[i] < earliest_deadline) && aliveTasks[i] ) {
-  		chosen = i;
-  		earliest_deadline = workloadDeadlines[chosen];
+  	if (aliveTasks[i]) {
+
+  		// If a task missed its deadline, schedule immediately
+  		if (get_scheduler_elapsed_time_us() > workloadDeadlines[i]) {
+  			chosen = i
+  			break;
+  		}
+  		if (workloadDeadlines[i] < earliest_deadline) {
+  			chosen = i;
+  			earliest_deadline = workloadDeadlines[chosen];
+  		}
   	}
   }
 
@@ -152,6 +176,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
   	// No alive tasks
   }
 
+  last_scheduled_task = chosen;
   TaskSelection sel;
 	sel.task = chosen;
 	sel.freq = 1;

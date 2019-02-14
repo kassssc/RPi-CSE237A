@@ -45,7 +45,7 @@ typedef struct shared_variable {
 	int touch;					// Output of temperature touch sensor
 
 	// Measured thread durations
-	long long dur_button, dur_threecolor, dur_big, dur_small, dur_touch, dur_rgbcolor, dur_aled;
+	long long avg_runtime[8];
 } SharedVariable;
 
 
