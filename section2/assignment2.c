@@ -4,6 +4,7 @@
 #include "scheduler.h"
 #include "governor.h"
 #include <stdio.h>
+#include <string.h>
 
 // Note: Deadline of each workload is defined in the "workloadDeadlines" variable.
 // i.e., You can access the dealine of the BUTTON thread using workloadDeadlines[BUTTON]
@@ -36,7 +37,7 @@ void learn_workloads(SharedVariable* sv) {
 		sv->avg_runtime[i] = 0;
 	}
 
-	for (i = 0; i < 15; i++) {
+	for (i = 0; i < 25; i++) {
 		// Button
 		start_time = get_current_time_us();
 		thread_button(sv);
@@ -103,7 +104,7 @@ void learn_workloads(SharedVariable* sv) {
 	}
 
 	for (i = 0; i < 8; i++) {
-		sv->avg_runtime[i] = (sv->avg_runtime[i] / 10.0) * 1.1;
+		sv->avg_runtime[i] = (sv->avg_runtime[i] / 25.0) * 1.4;
 		printf("AVG runtime %d = %d\n", i, sv->avg_runtime[i]);
 	}
 }
@@ -153,33 +154,56 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 
   return sel;
 	*/
+	static int prev_alive[8];
 
-  long long earliest_deadline = 9223372036854775807; // max long long value
-  int chosen = -1;
-  int i;
-  for (i = 0; i < 8; i++) {
-  	if (aliveTasks[i]) {
+	long long curr_time = get_scheduler_elapsed_time_us();
+	//printDBG("curr time is %lld\n", curr_time);
+  	int i;
 
-  		// If a task missed its deadline, schedule immediately
-  		if (get_scheduler_elapsed_time_us() > workloadDeadlines[i]) {
-  			chosen = i;
-  			break;
-  		}
-  		if (workloadDeadlines[i] < earliest_deadline) {
-  			chosen = i;
-  			earliest_deadline = workloadDeadlines[chosen];
-  		}
-  	}
-  }
+	// Identify newly created tasks, and record the next deadline coming up
+	for (i = 0; i < 8; i++) {
+		// Previously was dead, now alive
+		if (!prev_alive[i] && aliveTasks[i]) {
+			sv->next_deadline[i] = curr_time + workloadDeadlines[i];
+			//printDBG("task %d was created\n", i);
+			break;
+		}
+	}
+	
+	long long earliest_deadline = 9223372036854775807; // max long long value
+	int chosen = -1;
+	for (i = 0; i < 8; i++) {
+		if (aliveTasks[i]) {
+			//printDBG("task %d deadline %d\n", i, sv->next_deadline[i]);
+  			// If a task missed its deadline, schedule immediately
+  			if (curr_time > sv->next_deadline[i]) {
+				//printDBG("%d just missed deadline, scheduling now\n", i);
+  				chosen = i;
+  				break;
+  			}
+			if (sv->next_deadline[i] < earliest_deadline) {
+  				chosen = i;
+				earliest_deadline = sv->next_deadline[chosen];
+			}
+		}
+	}
 
-  if (chosen == -1) {
-  	// No alive tasks
-  }
-
-  //last_scheduled_task = chosen;
-  TaskSelection sel;
+	TaskSelection sel;
 	sel.task = chosen;
-	sel.freq = 1;
+	long long projected = curr_time + sv->avg_runtime[chosen];
+	long long tresh = sv->next_deadline[chosen] / 4;
+/*	printDBG("next deadline: %lld\n", sv->next_deadline[chosen]);
+	printDBG("curr time : %lld\n", curr_time);
+	printDBG("treshold: %lld\n", tresh);
+	printDBG("projected runtime: %lld\n", projected);*/ 
+	if (sv->next_deadline[chosen] - projected > tresh) {
+		sel.freq = 0;
+	} else {
+		sel.freq = 1;
+	} 
+
+	// Update prev_alive
+	memcpy(prev_alive, aliveTasks, 8*sizeof(int)); 
 
 	return sel;
 }

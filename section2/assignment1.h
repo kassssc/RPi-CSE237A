@@ -46,6 +46,7 @@ typedef struct shared_variable {
 
 	// Measured thread durations
 	long long avg_runtime[8];
+	long long next_deadline[8];
 } SharedVariable;
 
 
