@@ -155,39 +155,42 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
   return sel;
 	*/
 	static int prev_alive[8];
+	static int chosen; 
 
 	long long curr_time = get_scheduler_elapsed_time_us();
-	//printDBG("curr time is %lld\n", curr_time);
   	int i;
-
+	int task_added = 0;
 	// Identify newly created tasks, and record the next deadline coming up
 	for (i = 0; i < 8; i++) {
 		// Previously was dead, now alive
 		if (!prev_alive[i] && aliveTasks[i]) {
 			sv->next_deadline[i] = curr_time + workloadDeadlines[i];
+			task_added = 1;
 			//printDBG("task %d was created\n", i);
 			break;
 		}
 	}
 	
-	long long earliest_deadline = 9223372036854775807; // max long long value
-	int chosen = -1;
-	for (i = 0; i < 8; i++) {
-		if (aliveTasks[i]) {
-			//printDBG("task %d deadline %d\n", i, sv->next_deadline[i]);
-  			// If a task missed its deadline, schedule immediately
-  			if (curr_time > sv->next_deadline[i]) {
-				//printDBG("%d just missed deadline, scheduling now\n", i);
-  				chosen = i;
-  				break;
-  			}
-			if (sv->next_deadline[i] < earliest_deadline) {
-  				chosen = i;
-				earliest_deadline = sv->next_deadline[chosen];
+	if (task_added || !aliveTasks[chosen]) {
+		chosen = -1;	
+		long long earliest_deadline = 9223372036854775807; // max long long value
+		for (i = 0; i < 8; i++) {
+			if (aliveTasks[i]) {
+				//printDBG("task %d deadline %d\n", i, sv->next_deadline[i]);
+	  			// If a task missed its deadline, schedule immediately
+  				if (curr_time > sv->next_deadline[i]) {
+					//printDBG("%d just missed deadline, scheduling now\n", i);
+  					chosen = i;
+  					break;
+  				}
+				if (sv->next_deadline[i] < earliest_deadline) {
+  					chosen = i;
+					earliest_deadline = sv->next_deadline[chosen];
+				}
 			}
 		}
 	}
-
+	
 	TaskSelection sel;
 	sel.task = chosen;
 	long long projected = curr_time + sv->avg_runtime[chosen];
