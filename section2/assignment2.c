@@ -156,17 +156,27 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	*/
 	static int prev_alive[8];
 	static int chosen; 
+	static long long exec_time[8];
+	static long long prev_time;
 
 	long long curr_time = get_scheduler_elapsed_time_us();
+	exec_time[chosen] += curr_time - prev_time;
+
   	int i;
+	for (int i = 0; i < 8; i++) {
+		printDBG("%d ", aliveTasks[i]);
+	}
 	int task_added = 0;
 	// Identify newly created tasks, and record the next deadline coming up
 	for (i = 0; i < 8; i++) {
 		// Previously was dead, now alive
 		if (!prev_alive[i] && aliveTasks[i]) {
+			
+			printDBG("task %d created at %lld with deadline interval %lld\n", i, curr_time, workloadDeadlines[i]);
 			sv->next_deadline[i] = curr_time + workloadDeadlines[i];
 			task_added = 1;
-			//printDBG("task %d was created\n", i);
+			exec_time[i] = 0;
+			printDBG("next deadline is %lld\n", sv->next_deadline[i]);
 			break;
 		}
 	}
@@ -176,13 +186,14 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		long long earliest_deadline = 9223372036854775807; // max long long value
 		for (i = 0; i < 8; i++) {
 			if (aliveTasks[i]) {
+				printDBG("task %d is alive\n", i);
 				//printDBG("task %d deadline %d\n", i, sv->next_deadline[i]);
 	  			// If a task missed its deadline, schedule immediately
-  				if (curr_time > sv->next_deadline[i]) {
+  				/*if (curr_time > sv->next_deadline[i]) {
 					//printDBG("%d just missed deadline, scheduling now\n", i);
   					chosen = i;
   					break;
-  				}
+  				}*/
 				if (sv->next_deadline[i] < earliest_deadline) {
   					chosen = i;
 					earliest_deadline = sv->next_deadline[chosen];
@@ -193,13 +204,21 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	
 	TaskSelection sel;
 	sel.task = chosen;
-	long long projected = curr_time + sv->avg_runtime[chosen];
-	long long tresh = sv->next_deadline[chosen] / 4;
-/*	printDBG("next deadline: %lld\n", sv->next_deadline[chosen]);
+	long long projected = curr_time + sv->avg_runtime[chosen] - exec_time[chosen];
+	long long slack = sv->next_deadline[chosen] - projected; 
+	long long thrshld = 0;
+	printDBG("\n");
+	printDBG("next deadline: %lld\n", sv->next_deadline[chosen]);
 	printDBG("curr time : %lld\n", curr_time);
-	printDBG("treshold: %lld\n", tresh);
-	printDBG("projected runtime: %lld\n", projected);*/ 
-	if (sv->next_deadline[chosen] - projected > tresh) {
+	printDBG("treshold: %lld\n", thrshld);
+	printDBG("projected: %lld\n", projected);
+	printDBG("slack: %lld\n", slack);
+	printDBG("exec time: %lld\n", exec_time[chosen]);
+	printDBG("chose %d to run\n", chosen);
+	printDBG("\n");
+	
+
+	if (slack > thrshld) {
 		sel.freq = 0;
 	} else {
 		sel.freq = 1;
@@ -207,6 +226,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 
 	// Update prev_alive
 	memcpy(prev_alive, aliveTasks, 8*sizeof(int)); 
+	prev_time = get_scheduler_elapsed_time_us(); 
 
 	return sel;
 }
