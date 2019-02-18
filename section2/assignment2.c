@@ -104,7 +104,7 @@ void learn_workloads(SharedVariable* sv) {
 	}
 
 	for (i = 0; i < 8; i++) {
-		sv->avg_runtime[i] = (sv->avg_runtime[i] / 25.0) * 1.4;
+		sv->avg_runtime[i] = (long long) (( (double) sv->avg_runtime[i]) / 25.0 * 1.2);
 		printf("AVG runtime %d = %d\n", i, sv->avg_runtime[i]);
 		sv->next_deadline[i] = workloadDeadlines[i]; 
 	}
@@ -162,7 +162,6 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	static long long prev_time;
 
 	long long curr_time = get_scheduler_elapsed_time_us();
-	//exec_time[chosen] += curr_time - prev_time;
 	exec_time[chosen] += 10000;
 
   	int i;
@@ -175,11 +174,9 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		// Previously was dead, now alive
 		if (!prev_alive[i] && aliveTasks[i]) {
 			
-			printDBG("task %d created at %lld with deadline interval %lld\n", i, curr_time, workloadDeadlines[i]);
 			sv->next_deadline[i] = curr_time + workloadDeadlines[i];
 			task_added = 1;
 			exec_time[i] = 0;
-			printDBG("next deadline is %lld\n", sv->next_deadline[i]);
 		}
 	}
 	
@@ -206,7 +203,8 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	sel.task = chosen;
 	long long projected = curr_time + sv->avg_runtime[chosen] - exec_time[chosen];
 	long long slack = sv->next_deadline[chosen] - projected; 
-	long long thrshld = (long long) ((double) sv->avg_runtime[chosen] * 1.5); 
+//	long long thrshld = (long long) ( ((double)sv->avg_runtime[chosen]) * 1.25);
+	long long thrshld = sv->avg_runtime[chosen] * 2; 
 	
 	/*/	
 	printDBG("\n");

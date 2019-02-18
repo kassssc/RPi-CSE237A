@@ -1,1802 +1,1170 @@
 MIN frequency change test: 600000 == 600000
 MAX frequency change test: 1200000 == 1200000
-AVG runtime 0 = 8327
-AVG runtime 1 = 30436
-AVG runtime 2 = 29505
-AVG runtime 3 = 22625
-AVG runtime 4 = 22468
-AVG runtime 5 = 57106
-AVG runtime 6 = 35256
-AVG runtime 7 = 8345
+AVG runtime 0 = 7423
+AVG runtime 1 = 27117
+AVG runtime 2 = 26251
+AVG runtime 3 = 20132
+AVG runtime 4 = 20013
+AVG runtime 5 = 50501
+AVG runtime 6 = 31381
+AVG runtime 7 = 7425
 Start Scheduling with 8 threads
-task 1 created at 439 with deadline interval 400000
-next deadline is 400439
-task 2 created at 439 with deadline interval 300000
-next deadline is 300439
-task 3 created at 439 with deadline interval 600000
-next deadline is 600439
-task 4 created at 439 with deadline interval 200000
-next deadline is 200439
-task 5 created at 439 with deadline interval 200000
-next deadline is 200439
-task 6 created at 439 with deadline interval 600000
-next deadline is 600439
-task 7 created at 439 with deadline interval 150000
-next deadline is 150439
 -- 0 T7 1200000
 -- 12 T0 600000
--- 20 T0 600000
+-- 17 T0 600000
 -- 25 T4 600000
--- 30 T4 600000
--- 40 T4 600000
--- 50 T4 600000
+-- 27 T4 600000
+-- 37 T4 600000
+-- 47 T4 600000
+-- 57 T4 600000
 -- 59 T5 600000
--- 80 T5 1200000
--- 90 T5 1200000
--- 100 T5 1200000
+-- 77 T5 1200000
+-- 87 T5 1200000
+-- 97 T5 1200000
 -- 102 T2 1200000
--- 120 T2 600000
--- 130 T2 600000
--- 140 T2 600000
+-- 117 T2 600000
+-- 127 T2 600000
+-- 137 T2 600000
 -- 146 T1 600000
-task 7 created at 150629 with deadline interval 150000
-next deadline is 300629
--- 150 T7 600000
--- 160 T7 600000
--- 163 T1 600000
--- 170 T1 600000
--- 180 T1 600000
--- 190 T1 600000
-task 0 created at 200645 with deadline interval 200000
-next deadline is 400645
-task 4 created at 200645 with deadline interval 200000
-next deadline is 400645
-task 5 created at 200645 with deadline interval 200000
-next deadline is 400645
--- 200 T1 600000
+-- 147 T1 600000
+-- 157 T7 600000
+-- 167 T7 600000
+-- 169 T1 600000
+-- 177 T1 600000
+-- 187 T1 600000
+-- 197 T1 600000
 -- 205 T0 600000
--- 210 T0 600000
+-- 207 T0 600000
+-- 217 T0 600000
 -- 218 T4 600000
--- 220 T4 600000
--- 230 T4 600000
--- 240 T4 600000
--- 250 T4 600000
+-- 227 T4 600000
+-- 237 T4 600000
+-- 247 T4 600000
 -- 252 T5 600000
--- 260 T5 600000
--- 270 T5 600000
--- 280 T5 600000
--- 290 T5 600000
-task 2 created at 300638 with deadline interval 300000
-next deadline is 600638
-task 7 created at 300638 with deadline interval 150000
-next deadline is 450638
--- 300 T5 600000
--- 310 T5 600000
--- 320 T5 600000
--- 330 T5 600000
+-- 257 T5 600000
+-- 267 T5 600000
+-- 277 T5 600000
+-- 287 T5 600000
+-- 297 T5 600000
+-- 307 T5 600000
+-- 317 T5 600000
+-- 327 T5 600000
+-- 337 T5 600000
 -- 338 T7 600000
--- 340 T7 600000
--- 350 T7 600000
+-- 347 T7 600000
 -- 351 T3 600000
--- 360 T3 600000
--- 370 T3 600000
--- 380 T3 600000
+-- 357 T3 600000
+-- 367 T3 600000
+-- 377 T3 600000
 -- 385 T6 600000
--- 390 T6 600000
-task 0 created at 400685 with deadline interval 200000
-next deadline is 600685
-task 1 created at 400685 with deadline interval 400000
-next deadline is 800685
-task 4 created at 400685 with deadline interval 200000
-next deadline is 600685
-task 5 created at 400685 with deadline interval 200000
-next deadline is 600685
--- 400 T6 600000
--- 410 T6 600000
--- 420 T6 600000
--- 430 T6 600000
--- 438 T2 600000
--- 440 T2 600000
-task 7 created at 450569 with deadline interval 150000
-next deadline is 600569
--- 450 T7 600000
--- 460 T7 600000
--- 463 T2 600000
--- 470 T2 600000
--- 480 T2 600000
--- 490 T2 600000
+-- 387 T6 600000
+-- 397 T6 600000
+-- 407 T6 600000
+-- 417 T6 600000
+-- 427 T6 600000
+-- 437 T6 600000
+-- 439 T2 600000
+-- 447 T2 600000
+-- 457 T7 600000
+-- 467 T7 600000
+-- 469 T2 600000
+-- 477 T2 600000
+-- 487 T2 600000
 -- 496 T0 600000
--- 500 T0 600000
+-- 497 T0 600000
+-- 507 T0 600000
 -- 509 T4 600000
--- 510 T4 600000
--- 520 T4 600000
--- 530 T4 600000
--- 540 T4 600000
+-- 517 T4 600000
+-- 527 T4 600000
+-- 537 T4 600000
 -- 543 T5 600000
--- 560 T5 1200000
--- 570 T5 1200000
--- 580 T5 1200000
--- 585 T1 1200000
-task 0 created at 600942 with deadline interval 200000
-next deadline is 800942
-task 2 created at 600942 with deadline interval 300000
-next deadline is 900942
-task 3 created at 600942 with deadline interval 600000
-next deadline is 1200942
-task 4 created at 600942 with deadline interval 200000
-next deadline is 800942
-task 5 created at 600942 with deadline interval 200000
-next deadline is 800942
-task 6 created at 600942 with deadline interval 600000
-next deadline is 1200942
-task 7 created at 600942 with deadline interval 150000
-next deadline is 750942
--- 601 T7 600000
--- 610 T7 600000
--- 613 T1 600000
+-- 557 T5 1200000
+-- 567 T5 1200000
+-- 577 T5 1200000
+-- 586 T1 1200000
+-- 607 T7 600000
+-- 617 T7 600000
 -- 620 T1 600000
--- 630 T1 600000
--- 640 T1 600000
+-- 627 T1 600000
+-- 637 T1 600000
 -- 644 T0 600000
--- 650 T0 600000
+-- 647 T0 600000
+-- 657 T0 600000
 -- 657 T4 600000
--- 660 T4 600000
--- 670 T4 600000
--- 680 T4 600000
--- 690 T4 600000
+-- 667 T4 600000
+-- 677 T4 600000
+-- 687 T4 600000
 -- 691 T5 600000
--- 710 T5 1200000
--- 720 T5 1200000
--- 730 T5 1200000
+-- 707 T5 1200000
+-- 717 T5 1200000
+-- 727 T5 1200000
 -- 734 T2 1200000
-task 7 created at 750600 with deadline interval 150000
-next deadline is 900600
--- 750 T7 600000
--- 760 T7 600000
--- 763 T2 600000
--- 770 T2 600000
--- 780 T2 600000
--- 790 T2 600000
+-- 747 T2 600000
+-- 757 T7 600000
+-- 767 T7 600000
+-- 769 T2 600000
+-- 777 T2 600000
+-- 787 T2 600000
 -- 791 T3 600000
-task 0 created at 800686 with deadline interval 200000
-next deadline is 1000686
-task 1 created at 800686 with deadline interval 400000
-next deadline is 1200686
-task 4 created at 800686 with deadline interval 200000
-next deadline is 1000686
-task 5 created at 800686 with deadline interval 200000
-next deadline is 1000686
--- 800 T0 600000
--- 810 T0 600000
--- 813 T4 600000
--- 820 T4 600000
--- 830 T4 600000
--- 840 T4 600000
--- 847 T5 600000
--- 850 T5 600000
--- 860 T5 600000
--- 870 T5 600000
--- 880 T5 600000
--- 890 T5 600000
-task 2 created at 900643 with deadline interval 300000
-next deadline is 1200643
-task 7 created at 900643 with deadline interval 150000
-next deadline is 1050643
--- 900 T5 600000
--- 910 T5 600000
--- 920 T5 600000
--- 930 T5 600000
--- 933 T7 600000
+-- 797 T3 600000
+-- 807 T0 600000
+-- 817 T0 600000
+-- 819 T4 600000
+-- 827 T4 600000
+-- 837 T4 600000
+-- 847 T4 600000
+-- 854 T5 600000
+-- 857 T5 600000
+-- 867 T5 600000
+-- 877 T5 600000
+-- 887 T5 600000
+-- 897 T5 600000
+-- 907 T5 600000
+-- 917 T5 600000
+-- 927 T5 600000
+-- 937 T5 600000
 -- 940 T7 600000
--- 946 T2 600000
--- 950 T2 600000
--- 960 T2 600000
--- 970 T2 600000
--- 980 T2 600000
--- 990 T2 600000
--- 991 T1 600000
-task 0 created at 1000651 with deadline interval 200000
-next deadline is 1200651
-task 4 created at 1000651 with deadline interval 200000
-next deadline is 1200651
-task 5 created at 1000651 with deadline interval 200000
-next deadline is 1200651
--- 1000 T0 600000
--- 1010 T0 600000
--- 1013 T4 600000
--- 1020 T4 600000
--- 1030 T4 600000
--- 1040 T4 600000
--- 1047 T5 600000
-task 7 created at 1050608 with deadline interval 150000
-next deadline is 1200608
--- 1050 T7 600000
--- 1060 T7 600000
--- 1063 T5 600000
--- 1070 T5 600000
--- 1080 T5 600000
--- 1090 T5 600000
--- 1100 T5 600000
--- 1110 T5 600000
--- 1120 T5 600000
--- 1130 T5 600000
--- 1140 T5 600000
--- 1146 T1 600000
--- 1160 T1 1200000
--- 1165 T3 1200000
--- 1170 T3 1200000
+-- 947 T7 600000
+-- 952 T2 600000
+-- 957 T2 600000
+-- 967 T2 600000
+-- 977 T2 600000
+-- 987 T2 600000
+-- 997 T2 600000
+-- 997 T1 600000
+-- 1007 T0 600000
+-- 1017 T0 600000
+-- 1019 T4 600000
+-- 1027 T4 600000
+-- 1037 T4 600000
+-- 1047 T4 600000
+-- 1054 T7 600000
+-- 1057 T7 600000
+-- 1066 T5 600000
+-- 1087 T5 1200000
+-- 1097 T5 1200000
+-- 1107 T5 1200000
+-- 1109 T1 1200000
+-- 1127 T1 600000
+-- 1137 T1 600000
+-- 1145 T3 600000
+-- 1147 T3 600000
+-- 1157 T3 600000
+-- 1164 T6 600000
 -- 1177 T6 1200000
--- 1180 T6 1200000
--- 1190 T6 1200000
-Missing Deadline(Debug): 6 L 600512 P 1200000 C 1200484 D 600000
-Missing Deadline: Task 6 at 1200484 us
-task 0 created at 1200722 with deadline interval 200000
-next deadline is 1400722
-task 1 created at 1200722 with deadline interval 400000
-next deadline is 1600722
-task 2 created at 1200722 with deadline interval 300000
-next deadline is 1500722
-task 3 created at 1200722 with deadline interval 600000
-next deadline is 1800722
-task 4 created at 1200722 with deadline interval 200000
-next deadline is 1400722
-task 5 created at 1200722 with deadline interval 200000
-next deadline is 1400722
-task 7 created at 1200722 with deadline interval 150000
-next deadline is 1350722
+-- 1187 T6 1200000
 -- 1200 T6 1200000
--- 1203 T6 1200000
--- 1210 T6 1200000
--- 1220 T6 1200000
--- 1229 T7 1200000
--- 1241 T0 600000
--- 1250 T0 600000
--- 1254 T4 600000
--- 1260 T4 600000
--- 1270 T4 600000
--- 1280 T4 600000
--- 1288 T5 600000
--- 1300 T5 1200000
--- 1310 T5 1200000
--- 1320 T5 1200000
--- 1330 T5 1200000
--- 1330 T2 1200000
-task 7 created at 1350595 with deadline interval 150000
-next deadline is 1500595
--- 1350 T7 600000
--- 1360 T7 600000
--- 1363 T2 600000
--- 1370 T2 600000
--- 1380 T2 600000
+-- 1207 T6 1200000
+-- 1217 T6 1200000
+-- 1226 T7 1200000
+-- 1238 T0 600000
+-- 1247 T0 600000
+-- 1251 T4 600000
+-- 1257 T4 600000
+-- 1267 T4 600000
+-- 1277 T4 600000
+-- 1285 T5 600000
+-- 1307 T5 1200000
+-- 1317 T5 1200000
+-- 1327 T5 1200000
+-- 1327 T2 1200000
+-- 1347 T2 600000
+-- 1357 T2 600000
+-- 1367 T2 600000
+-- 1371 T7 600000
+-- 1377 T7 600000
+-- 1384 T1 600000
 -- 1387 T1 600000
--- 1390 T1 600000
-task 0 created at 1400658 with deadline interval 200000
-next deadline is 1600658
-task 4 created at 1400658 with deadline interval 200000
-next deadline is 1600658
-task 5 created at 1400658 with deadline interval 200000
-next deadline is 1600658
--- 1400 T0 600000
--- 1410 T0 600000
--- 1413 T4 600000
--- 1420 T4 600000
--- 1430 T4 600000
--- 1440 T4 600000
--- 1447 T5 600000
--- 1450 T5 600000
--- 1460 T5 600000
--- 1470 T5 600000
--- 1480 T5 600000
--- 1490 T5 600000
-task 2 created at 1500639 with deadline interval 300000
-next deadline is 1800639
-task 7 created at 1500639 with deadline interval 150000
-next deadline is 1650639
--- 1500 T5 600000
--- 1510 T5 600000
--- 1520 T5 600000
--- 1530 T5 600000
--- 1533 T1 600000
--- 1540 T1 600000
--- 1550 T1 600000
--- 1560 T1 600000
--- 1567 T7 600000
--- 1570 T7 600000
--- 1579 T2 600000
--- 1580 T2 600000
--- 1590 T2 600000
-task 0 created at 1600684 with deadline interval 200000
-next deadline is 1800684
-task 1 created at 1600684 with deadline interval 400000
-next deadline is 2000684
-task 4 created at 1600684 with deadline interval 200000
-next deadline is 1800684
-task 5 created at 1600684 with deadline interval 200000
-next deadline is 1800684
--- 1600 T2 600000
--- 1610 T2 600000
--- 1620 T2 600000
--- 1624 T0 600000
--- 1630 T0 600000
+-- 1397 T1 600000
+-- 1407 T1 600000
+-- 1417 T1 600000
+-- 1427 T1 600000
+-- 1431 T0 600000
+-- 1437 T0 600000
+-- 1443 T4 600000
+-- 1447 T4 600000
+-- 1457 T4 600000
+-- 1467 T4 600000
+-- 1477 T4 600000
+-- 1477 T5 600000
+-- 1497 T5 1200000
+-- 1507 T5 1200000
+-- 1517 T5 1200000
+-- 1520 T7 1200000
+-- 1532 T3 600000
+-- 1537 T3 600000
+-- 1547 T3 600000
+-- 1557 T3 600000
+-- 1566 T2 600000
+-- 1577 T2 600000
+-- 1587 T2 600000
+-- 1597 T2 600000
+-- 1607 T2 600000
+-- 1611 T0 600000
+-- 1617 T0 600000
+-- 1624 T4 600000
+-- 1627 T4 600000
 -- 1637 T4 600000
--- 1640 T4 600000
-task 7 created at 1650620 with deadline interval 150000
-next deadline is 1800620
--- 1650 T7 600000
--- 1660 T7 600000
--- 1663 T4 600000
--- 1670 T4 600000
--- 1680 T4 600000
--- 1684 T5 600000
--- 1700 T5 1200000
--- 1710 T5 1200000
--- 1720 T5 1200000
--- 1727 T3 1200000
--- 1740 T3 600000
--- 1750 T3 600000
--- 1760 T3 600000
--- 1761 T1 600000
--- 1770 T1 600000
--- 1780 T1 600000
--- 1790 T1 600000
-task 0 created at 1800927 with deadline interval 200000
-next deadline is 2000927
-task 2 created at 1800927 with deadline interval 300000
-next deadline is 2100927
-task 3 created at 1800927 with deadline interval 600000
-next deadline is 2400927
-task 4 created at 1800927 with deadline interval 200000
-next deadline is 2000927
-task 5 created at 1800927 with deadline interval 200000
-next deadline is 2000927
-task 6 created at 1800927 with deadline interval 600000
-next deadline is 2400927
-task 7 created at 1800927 with deadline interval 150000
-next deadline is 1950927
--- 1801 T7 600000
--- 1810 T7 600000
--- 1813 T1 600000
--- 1820 T1 600000
--- 1820 T0 600000
--- 1830 T0 600000
--- 1833 T4 600000
--- 1840 T4 600000
--- 1850 T4 600000
--- 1860 T4 600000
--- 1867 T5 600000
--- 1880 T5 1200000
--- 1890 T5 1200000
--- 1900 T5 1200000
--- 1910 T2 1200000
--- 1930 T2 600000
--- 1940 T2 600000
-task 7 created at 1950598 with deadline interval 150000
-next deadline is 2100598
--- 1950 T7 600000
--- 1960 T7 600000
--- 1963 T2 600000
--- 1967 T3 600000
--- 1970 T3 600000
--- 1980 T3 600000
--- 1990 T3 600000
-task 0 created at 2000690 with deadline interval 200000
-next deadline is 2200690
-task 1 created at 2000690 with deadline interval 400000
-next deadline is 2400690
-task 4 created at 2000690 with deadline interval 200000
-next deadline is 2200690
-task 5 created at 2000690 with deadline interval 200000
-next deadline is 2200690
--- 2000 T0 600000
--- 2010 T0 600000
--- 2013 T4 600000
--- 2020 T4 600000
--- 2030 T4 600000
--- 2040 T4 600000
--- 2047 T5 600000
--- 2050 T5 600000
--- 2060 T5 600000
--- 2070 T5 600000
--- 2080 T5 600000
--- 2090 T5 600000
-task 2 created at 2100640 with deadline interval 300000
-next deadline is 2400640
-task 7 created at 2100640 with deadline interval 150000
-next deadline is 2250640
--- 2100 T5 600000
--- 2110 T5 600000
--- 2120 T5 600000
--- 2130 T5 600000
--- 2133 T7 600000
+-- 1647 T4 600000
+-- 1657 T7 600000
+-- 1667 T7 600000
+-- 1669 T4 600000
+-- 1671 T5 600000
+-- 1687 T5 1200000
+-- 1697 T5 1200000
+-- 1707 T5 1200000
+-- 1713 T1 1200000
+-- 1727 T1 600000
+-- 1737 T1 600000
+-- 1747 T1 600000
+-- 1757 T1 600000
+-- 1800 T7 600000
+-- 1807 T7 600000
+-- 1813 T0 600000
+-- 1817 T0 600000
+-- 1826 T4 600000
+-- 1827 T4 600000
+-- 1837 T4 600000
+-- 1847 T4 600000
+-- 1857 T4 600000
+-- 1860 T5 600000
+-- 1877 T5 1200000
+-- 1887 T5 1200000
+-- 1897 T5 1200000
+-- 1902 T2 1200000
+-- 1917 T2 600000
+-- 1927 T2 600000
+-- 1937 T2 600000
+-- 1946 T3 600000
+-- 1947 T3 600000
+-- 1957 T7 600000
+-- 1967 T7 600000
+-- 1969 T3 600000
+-- 1977 T3 600000
+-- 1987 T3 600000
+-- 1994 T6 600000
+-- 1997 T6 600000
+-- 2007 T0 600000
+-- 2017 T0 600000
+-- 2019 T4 600000
+-- 2027 T4 600000
+-- 2037 T4 600000
+-- 2047 T4 600000
+-- 2054 T5 600000
+-- 2057 T5 600000
+-- 2067 T5 600000
+-- 2077 T5 600000
+-- 2087 T5 600000
+-- 2097 T5 600000
+-- 2107 T5 600000
+-- 2117 T5 600000
+-- 2127 T5 600000
+-- 2137 T5 600000
 -- 2140 T7 600000
--- 2146 T2 600000
--- 2150 T2 600000
--- 2160 T2 600000
--- 2170 T2 600000
--- 2180 T2 600000
--- 2190 T2 600000
--- 2191 T1 600000
-task 0 created at 2200649 with deadline interval 200000
-next deadline is 2400649
-task 4 created at 2200649 with deadline interval 200000
-next deadline is 2400649
-task 5 created at 2200649 with deadline interval 200000
-next deadline is 2400649
--- 2200 T0 600000
--- 2210 T0 600000
--- 2213 T4 600000
--- 2220 T4 600000
--- 2230 T4 600000
--- 2240 T4 600000
--- 2247 T5 600000
-task 7 created at 2250611 with deadline interval 150000
-next deadline is 2400611
--- 2250 T7 600000
--- 2260 T7 600000
--- 2263 T5 600000
--- 2270 T5 600000
--- 2280 T5 600000
--- 2290 T5 600000
--- 2300 T5 600000
--- 2310 T5 600000
--- 2320 T5 600000
--- 2330 T5 600000
--- 2340 T5 600000
--- 2346 T1 600000
--- 2360 T1 1200000
--- 2365 T3 1200000
--- 2367 T6 600000
--- 2380 T6 1200000
--- 2390 T6 1200000
-task 0 created at 2400377 with deadline interval 200000
-next deadline is 2600377
-task 1 created at 2400377 with deadline interval 400000
-next deadline is 2800377
-task 2 created at 2400377 with deadline interval 300000
-next deadline is 2700377
-task 3 created at 2400377 with deadline interval 600000
-next deadline is 3000377
-task 4 created at 2400377 with deadline interval 200000
-next deadline is 2600377
-task 5 created at 2400377 with deadline interval 200000
-next deadline is 2600377
-task 7 created at 2400377 with deadline interval 150000
-next deadline is 2550377
--- 2400 T6 1200000
--- 2410 T6 1200000
--- 2420 T6 1200000
--- 2426 T7 1200000
--- 2438 T0 600000
--- 2440 T0 600000
--- 2450 T0 600000
--- 2451 T4 600000
--- 2460 T4 600000
--- 2470 T4 600000
--- 2480 T4 600000
--- 2485 T5 600000
--- 2500 T5 1200000
--- 2510 T5 1200000
--- 2520 T5 1200000
--- 2528 T2 1200000
--- 2540 T2 600000
-task 7 created at 2550597 with deadline interval 150000
-next deadline is 2700597
--- 2550 T2 600000
--- 2560 T2 600000
--- 2570 T2 600000
--- 2572 T7 600000
--- 2580 T7 600000
--- 2585 T1 600000
--- 2590 T1 600000
-task 0 created at 2600653 with deadline interval 200000
-next deadline is 2800653
-task 4 created at 2600653 with deadline interval 200000
-next deadline is 2800653
-task 5 created at 2600653 with deadline interval 200000
-next deadline is 2800653
--- 2600 T1 600000
--- 2610 T1 600000
--- 2620 T1 600000
--- 2630 T1 600000
--- 2631 T0 600000
--- 2640 T0 600000
--- 2644 T4 600000
--- 2650 T4 600000
--- 2660 T4 600000
--- 2670 T4 600000
--- 2678 T5 600000
-task 2 created at 2700558 with deadline interval 300000
-next deadline is 3000558
-task 7 created at 2700558 with deadline interval 150000
-next deadline is 2850558
--- 2700 T5 1200000
--- 2710 T5 1200000
--- 2720 T5 1200000
--- 2721 T7 1200000
--- 2733 T3 600000
--- 2740 T3 600000
--- 2750 T3 600000
--- 2760 T3 600000
--- 2767 T2 600000
--- 2770 T2 600000
--- 2780 T2 600000
--- 2790 T2 600000
-task 0 created at 2800690 with deadline interval 200000
-next deadline is 3000690
-task 1 created at 2800690 with deadline interval 400000
-next deadline is 3200690
-task 4 created at 2800690 with deadline interval 200000
-next deadline is 3000690
-task 5 created at 2800690 with deadline interval 200000
-next deadline is 3000690
--- 2800 T2 600000
--- 2810 T2 600000
--- 2812 T0 600000
--- 2820 T0 600000
--- 2825 T4 600000
--- 2830 T4 600000
--- 2840 T4 600000
-task 7 created at 2850610 with deadline interval 150000
-next deadline is 3000610
--- 2850 T7 600000
--- 2860 T7 600000
--- 2863 T4 600000
--- 2870 T4 600000
--- 2872 T5 600000
--- 2890 T5 1200000
--- 2900 T5 1200000
--- 2910 T5 1200000
--- 2915 T1 1200000
--- 2930 T1 600000
--- 2940 T1 600000
--- 2950 T1 600000
--- 2960 T1 600000
-task 0 created at 3000562 with deadline interval 200000
-next deadline is 3200562
-task 2 created at 3000562 with deadline interval 300000
-next deadline is 3300562
-task 3 created at 3000562 with deadline interval 600000
-next deadline is 3600562
-task 4 created at 3000562 with deadline interval 200000
-next deadline is 3200562
-task 5 created at 3000562 with deadline interval 200000
-next deadline is 3200562
-task 6 created at 3000562 with deadline interval 600000
-next deadline is 3600562
-task 7 created at 3000562 with deadline interval 150000
-next deadline is 3150562
--- 3000 T7 600000
--- 3010 T7 600000
--- 3013 T0 600000
--- 3020 T0 600000
--- 3026 T4 600000
--- 3030 T4 600000
--- 3040 T4 600000
--- 3050 T4 600000
--- 3060 T4 600000
--- 3060 T5 600000
--- 3080 T5 1200000
--- 3090 T5 1200000
--- 3100 T5 1200000
--- 3103 T2 1200000
--- 3120 T2 600000
--- 3130 T2 600000
--- 3140 T2 600000
--- 3147 T3 600000
-task 7 created at 3150603 with deadline interval 150000
-next deadline is 3300603
--- 3150 T7 600000
--- 3160 T7 600000
--- 3163 T3 600000
--- 3170 T3 600000
--- 3180 T3 600000
--- 3190 T3 600000
--- 3194 T6 600000
-task 0 created at 3200696 with deadline interval 200000
-next deadline is 3400696
-task 1 created at 3200696 with deadline interval 400000
-next deadline is 3600696
-task 4 created at 3200696 with deadline interval 200000
-next deadline is 3400696
-task 5 created at 3200696 with deadline interval 200000
-next deadline is 3400696
--- 3200 T0 600000
--- 3210 T0 600000
--- 3213 T4 600000
--- 3220 T4 600000
--- 3230 T4 600000
--- 3240 T4 600000
--- 3247 T5 600000
--- 3250 T5 600000
--- 3260 T5 600000
--- 3270 T5 600000
--- 3280 T5 600000
--- 3290 T5 600000
-task 2 created at 3300638 with deadline interval 300000
-next deadline is 3600638
-task 7 created at 3300638 with deadline interval 150000
-next deadline is 3450638
--- 3300 T5 600000
--- 3310 T5 600000
--- 3320 T5 600000
--- 3330 T5 600000
+-- 2147 T7 600000
+-- 2152 T6 600000
+-- 2157 T6 600000
+-- 2167 T6 600000
+-- 2177 T6 600000
+-- 2187 T6 600000
+-- 2193 T2 600000
+-- 2197 T2 600000
+-- 2207 T0 600000
+-- 2217 T0 600000
+-- 2219 T4 600000
+-- 2227 T4 600000
+-- 2237 T4 600000
+-- 2247 T4 600000
+-- 2254 T7 600000
+-- 2257 T7 600000
+-- 2266 T5 600000
+-- 2287 T5 1200000
+-- 2297 T5 1200000
+-- 2307 T5 1200000
+-- 2309 T2 1200000
+-- 2327 T2 600000
+-- 2337 T2 600000
+-- 2340 T1 600000
+-- 2357 T1 1200000
+-- 2400 T1 1200000
+-- 2407 T1 1200000
+-- 2417 T1 1200000
+-- 2422 T7 1200000
+-- 2434 T0 600000
+-- 2437 T0 600000
+-- 2447 T0 600000
+-- 2447 T4 600000
+-- 2457 T4 600000
+-- 2467 T4 600000
+-- 2477 T4 600000
+-- 2481 T5 600000
+-- 2497 T5 1200000
+-- 2507 T5 1200000
+-- 2517 T5 1200000
+-- 2524 T2 1200000
+-- 2537 T2 600000
+-- 2547 T2 600000
+-- 2557 T2 600000
+-- 2567 T2 600000
+-- 2568 T7 600000
+-- 2577 T7 600000
+-- 2581 T3 600000
+-- 2587 T3 600000
+-- 2597 T3 600000
+-- 2607 T0 600000
+-- 2617 T0 600000
+-- 2619 T4 600000
+-- 2627 T4 600000
+-- 2637 T4 600000
+-- 2647 T4 600000
+-- 2654 T5 600000
+-- 2657 T5 600000
+-- 2667 T5 600000
+-- 2677 T5 600000
+-- 2687 T5 600000
+-- 2697 T5 600000
+-- 2707 T5 600000
+-- 2717 T5 600000
+-- 2727 T5 600000
+-- 2737 T5 600000
+-- 2740 T7 600000
+-- 2747 T7 600000
+-- 2752 T3 600000
+-- 2757 T3 600000
+-- 2761 T6 600000
+-- 2767 T6 600000
+-- 2777 T6 600000
+-- 2787 T6 600000
+-- 2797 T6 600000
+-- 2807 T6 600000
+-- 2815 T2 600000
+-- 2817 T2 600000
+-- 2827 T2 600000
+-- 2837 T2 600000
+-- 2847 T2 600000
+-- 2857 T7 600000
+-- 2867 T7 600000
+-- 2869 T2 600000
+-- 2872 T0 600000
+-- 2877 T0 600000
+-- 2885 T4 600000
+-- 2887 T4 600000
+-- 2897 T4 600000
+-- 2907 T4 600000
+-- 2917 T4 600000
+-- 2919 T5 600000
+-- 2937 T5 1200000
+-- 2947 T5 1200000
+-- 2957 T5 1200000
+-- 2962 T1 1200000
+-- 2977 T1 600000
+-- 2987 T1 600000
+-- 2997 T1 600000
+-- 3007 T7 600000
+-- 3017 T7 600000
+-- 3020 T1 600000
+-- 3021 T0 600000
+-- 3027 T0 600000
+-- 3033 T4 600000
+-- 3037 T4 600000
+-- 3047 T4 600000
+-- 3057 T4 600000
+-- 3067 T4 600000
+-- 3068 T5 600000
+-- 3087 T5 1200000
+-- 3097 T5 1200000
+-- 3107 T5 1200000
+-- 3110 T2 1200000
+-- 3127 T2 600000
+-- 3137 T2 600000
+-- 3147 T2 600000
+-- 3154 T7 600000
+-- 3157 T7 600000
+-- 3167 T7 600000
+-- 3167 T3 600000
+-- 3177 T3 600000
+-- 3187 T3 600000
+-- 3197 T3 600000
+-- 3202 T0 600000
+-- 3207 T0 600000
+-- 3215 T4 600000
+-- 3217 T4 600000
+-- 3227 T4 600000
+-- 3237 T4 600000
+-- 3247 T4 600000
+-- 3249 T5 600000
+-- 3257 T5 600000
+-- 3267 T5 600000
+-- 3277 T5 600000
+-- 3287 T5 600000
+-- 3297 T5 600000
+-- 3307 T5 600000
+-- 3317 T5 600000
+-- 3327 T5 600000
 -- 3335 T7 600000
--- 3340 T7 600000
--- 3347 T6 600000
--- 3350 T6 600000
--- 3360 T6 600000
--- 3370 T6 600000
--- 3380 T6 600000
--- 3390 T6 600000
--- 3395 T2 600000
-task 0 created at 3400651 with deadline interval 200000
-next deadline is 3600651
-task 4 created at 3400651 with deadline interval 200000
-next deadline is 3600651
-task 5 created at 3400651 with deadline interval 200000
-next deadline is 3600651
--- 3400 T2 600000
--- 3410 T2 600000
--- 3420 T2 600000
--- 3430 T2 600000
--- 3440 T0 600000
-task 7 created at 3450573 with deadline interval 150000
-next deadline is 3600573
--- 3450 T7 600000
--- 3460 T7 600000
--- 3463 T0 600000
--- 3466 T4 600000
--- 3470 T4 600000
--- 3480 T4 600000
--- 3490 T4 600000
--- 3500 T5 600000
--- 3520 T5 1200000
--- 3530 T5 1200000
--- 3540 T5 1200000
--- 3542 T1 1200000
--- 3550 T1 1200000
--- 3560 T1 1200000
-task 0 created at 3600283 with deadline interval 200000
-next deadline is 3800283
-task 2 created at 3600283 with deadline interval 300000
-next deadline is 3900283
-task 3 created at 3600283 with deadline interval 600000
-next deadline is 4200283
-task 4 created at 3600283 with deadline interval 200000
-next deadline is 3800283
-task 5 created at 3600283 with deadline interval 200000
-next deadline is 3800283
-task 6 created at 3600283 with deadline interval 600000
-next deadline is 4200283
-task 7 created at 3600283 with deadline interval 150000
-next deadline is 3750283
--- 3600 T1 1200000
--- 3610 T1 1200000
--- 3620 T1 1200000
--- 3622 T7 1200000
--- 3634 T0 600000
--- 3640 T0 600000
--- 3647 T4 600000
--- 3650 T4 600000
--- 3660 T4 600000
--- 3670 T4 600000
--- 3680 T4 600000
--- 3682 T5 600000
--- 3700 T5 1200000
--- 3710 T5 1200000
--- 3720 T5 1200000
--- 3724 T2 1200000
--- 3740 T2 600000
-task 7 created at 3750603 with deadline interval 150000
-next deadline is 3900603
--- 3750 T2 600000
--- 3760 T2 600000
--- 3768 T7 600000
--- 3770 T7 600000
--- 3780 T7 600000
--- 3781 T3 600000
--- 3790 T3 600000
-task 0 created at 3800655 with deadline interval 200000
-next deadline is 4000655
-task 4 created at 3800655 with deadline interval 200000
-next deadline is 4000655
-task 5 created at 3800655 with deadline interval 200000
-next deadline is 4000655
--- 3800 T0 600000
--- 3810 T0 600000
--- 3813 T4 600000
--- 3820 T4 600000
--- 3830 T4 600000
--- 3840 T4 600000
--- 3847 T5 600000
--- 3850 T5 600000
--- 3860 T5 600000
--- 3870 T5 600000
--- 3880 T5 600000
--- 3890 T5 600000
-task 2 created at 3900643 with deadline interval 300000
-next deadline is 4200643
-task 7 created at 3900643 with deadline interval 150000
-next deadline is 4050643
--- 3900 T5 600000
--- 3910 T5 600000
--- 3920 T5 600000
--- 3930 T5 600000
--- 3934 T7 600000
--- 3940 T7 600000
--- 3946 T3 600000
--- 3950 T3 600000
--- 3960 T3 600000
--- 3962 T6 600000
--- 3970 T6 600000
--- 3980 T6 600000
--- 3990 T6 600000
-task 0 created at 4000686 with deadline interval 200000
-next deadline is 4200686
-task 1 created at 4000686 with deadline interval 400000
-next deadline is 4400686
-task 4 created at 4000686 with deadline interval 200000
-next deadline is 4200686
-task 5 created at 4000686 with deadline interval 200000
-next deadline is 4200686
--- 4000 T6 600000
--- 4010 T6 600000
--- 4016 T2 600000
--- 4020 T2 600000
--- 4030 T2 600000
--- 4040 T2 600000
-task 7 created at 4050581 with deadline interval 150000
-next deadline is 4200581
--- 4050 T7 600000
--- 4060 T7 600000
--- 4063 T2 600000
--- 4070 T2 600000
--- 4073 T0 600000
--- 4080 T0 600000
--- 4086 T4 600000
--- 4090 T4 600000
--- 4100 T4 600000
--- 4110 T4 600000
--- 4120 T4 600000
--- 4121 T5 600000
--- 4140 T5 1200000
--- 4150 T5 1200000
--- 4160 T5 1200000
--- 4163 T1 1200000
--- 4180 T1 600000
--- 4190 T1 600000
-task 0 created at 4200939 with deadline interval 200000
-next deadline is 4400939
-task 2 created at 4200939 with deadline interval 300000
-next deadline is 4500939
-task 3 created at 4200939 with deadline interval 600000
-next deadline is 4800939
-task 4 created at 4200939 with deadline interval 200000
-next deadline is 4400939
-task 5 created at 4200939 with deadline interval 200000
-next deadline is 4400939
-task 6 created at 4200939 with deadline interval 600000
-next deadline is 4800939
-task 7 created at 4200939 with deadline interval 150000
-next deadline is 4350939
--- 4201 T7 600000
--- 4210 T7 600000
--- 4214 T1 600000
--- 4220 T1 600000
--- 4222 T0 600000
--- 4230 T0 600000
--- 4235 T4 600000
--- 4240 T4 600000
--- 4250 T4 600000
--- 4260 T4 600000
--- 4269 T5 600000
--- 4290 T5 1200000
--- 4300 T5 1200000
--- 4310 T5 1200000
--- 4312 T2 1200000
--- 4330 T2 600000
--- 4340 T2 600000
-task 7 created at 4350602 with deadline interval 150000
-next deadline is 4500602
--- 4350 T7 600000
--- 4360 T7 600000
--- 4363 T2 600000
+-- 3337 T7 600000
+-- 3347 T7 600000
+-- 3348 T1 600000
+-- 3357 T1 600000
+-- 3367 T1 600000
+-- 3377 T1 600000
+-- 3387 T1 600000
+-- 3394 T2 600000
+-- 3397 T2 600000
+-- 3407 T0 600000
+-- 3417 T0 600000
+-- 3419 T4 600000
+-- 3427 T4 600000
+-- 3437 T4 600000
+-- 3447 T4 600000
+-- 3454 T7 600000
+-- 3457 T7 600000
+-- 3466 T5 600000
+-- 3487 T5 1200000
+-- 3497 T5 1200000
+-- 3507 T5 1200000
+-- 3509 T2 1200000
+-- 3527 T2 600000
+-- 3537 T2 600000
+-- 3540 T6 600000
+-- 3557 T6 1200000
+-- 3567 T6 1200000
+-- 3600 T6 1200000
+-- 3607 T6 1200000
+-- 3617 T6 1200000
+-- 3626 T7 1200000
+-- 3638 T0 600000
+-- 3647 T0 600000
+-- 3651 T4 600000
+-- 3657 T4 600000
+-- 3667 T4 600000
+-- 3677 T4 600000
+-- 3685 T5 600000
+-- 3707 T5 1200000
+-- 3717 T5 1200000
+-- 3727 T5 1200000
+-- 3727 T2 1200000
+-- 3747 T2 600000
+-- 3757 T2 600000
+-- 3767 T2 600000
+-- 3772 T7 600000
+-- 3777 T7 600000
+-- 3784 T1 600000
+-- 3787 T1 600000
+-- 3797 T1 600000
+-- 3807 T1 600000
+-- 3817 T1 600000
+-- 3827 T1 600000
+-- 3831 T0 600000
+-- 3837 T0 600000
+-- 3843 T4 600000
+-- 3847 T4 600000
+-- 3857 T4 600000
+-- 3867 T4 600000
+-- 3877 T4 600000
+-- 3878 T5 600000
+-- 3897 T5 1200000
+-- 3907 T5 1200000
+-- 3917 T5 1200000
+-- 3920 T7 1200000
+-- 3932 T3 600000
+-- 3937 T3 600000
+-- 3947 T3 600000
+-- 3957 T3 600000
+-- 3967 T3 600000
+-- 3967 T2 600000
+-- 3977 T2 600000
+-- 3987 T2 600000
+-- 3997 T2 600000
+-- 4007 T2 600000
+-- 4012 T0 600000
+-- 4017 T0 600000
+-- 4024 T4 600000
+-- 4027 T4 600000
+-- 4037 T4 600000
+-- 4047 T4 600000
+-- 4057 T7 600000
+-- 4067 T7 600000
+-- 4069 T4 600000
+-- 4072 T5 600000
+-- 4087 T5 1200000
+-- 4097 T5 1200000
+-- 4107 T5 1200000
+-- 4114 T1 1200000
+-- 4127 T1 600000
+-- 4137 T1 600000
+-- 4147 T1 600000
+-- 4157 T1 600000
+-- 4200 T7 600000
+-- 4207 T7 600000
+-- 4213 T0 600000
+-- 4217 T0 600000
+-- 4226 T4 600000
+-- 4227 T4 600000
+-- 4237 T4 600000
+-- 4247 T4 600000
+-- 4257 T4 600000
+-- 4260 T5 600000
+-- 4277 T5 1200000
+-- 4287 T5 1200000
+-- 4297 T5 1200000
+-- 4302 T2 1200000
+-- 4317 T2 600000
+-- 4327 T2 600000
+-- 4337 T2 600000
+-- 4346 T3 600000
+-- 4347 T3 600000
+-- 4357 T7 600000
+-- 4367 T7 600000
 -- 4369 T3 600000
--- 4370 T3 600000
--- 4380 T3 600000
--- 4390 T3 600000
-task 0 created at 4400692 with deadline interval 200000
-next deadline is 4600692
-task 1 created at 4400692 with deadline interval 400000
-next deadline is 4800692
-task 4 created at 4400692 with deadline interval 200000
-next deadline is 4600692
-task 5 created at 4400692 with deadline interval 200000
-next deadline is 4600692
--- 4400 T0 600000
--- 4410 T0 600000
--- 4413 T4 600000
--- 4420 T4 600000
--- 4430 T4 600000
--- 4440 T4 600000
--- 4447 T5 600000
--- 4450 T5 600000
--- 4460 T5 600000
--- 4470 T5 600000
--- 4480 T5 600000
--- 4490 T5 600000
-task 2 created at 4500644 with deadline interval 300000
-next deadline is 4800644
-task 7 created at 4500644 with deadline interval 150000
-next deadline is 4650644
--- 4500 T5 600000
--- 4510 T5 600000
--- 4520 T5 600000
--- 4530 T5 600000
--- 4534 T7 600000
+-- 4377 T3 600000
+-- 4387 T3 600000
+-- 4393 T6 600000
+-- 4397 T6 600000
+-- 4407 T0 600000
+-- 4417 T0 600000
+-- 4419 T4 600000
+-- 4427 T4 600000
+-- 4437 T4 600000
+-- 4447 T4 600000
+-- 4454 T5 600000
+-- 4457 T5 600000
+-- 4467 T5 600000
+-- 4477 T5 600000
+-- 4487 T5 600000
+-- 4497 T5 600000
+-- 4507 T5 600000
+-- 4517 T5 600000
+-- 4527 T5 600000
+-- 4537 T5 600000
 -- 4540 T7 600000
--- 4547 T2 600000
--- 4550 T2 600000
--- 4560 T2 600000
--- 4570 T2 600000
--- 4580 T2 600000
--- 4590 T2 600000
--- 4592 T1 600000
-task 0 created at 4600659 with deadline interval 200000
-next deadline is 4800659
-task 4 created at 4600659 with deadline interval 200000
-next deadline is 4800659
-task 5 created at 4600659 with deadline interval 200000
-next deadline is 4800659
--- 4600 T0 600000
--- 4610 T0 600000
--- 4613 T4 600000
--- 4620 T4 600000
--- 4630 T4 600000
--- 4640 T4 600000
--- 4647 T5 600000
-task 7 created at 4650620 with deadline interval 150000
-next deadline is 4800620
--- 4650 T7 600000
--- 4660 T7 600000
--- 4663 T5 600000
--- 4670 T5 600000
--- 4680 T5 600000
--- 4690 T5 600000
--- 4700 T5 600000
--- 4710 T5 600000
--- 4720 T5 600000
--- 4730 T5 600000
--- 4740 T5 600000
--- 4747 T1 600000
--- 4760 T1 1200000
--- 4766 T3 1200000
--- 4769 T6 600000
--- 4790 T6 1200000
-task 0 created at 4800287 with deadline interval 200000
-next deadline is 5000287
-task 1 created at 4800287 with deadline interval 400000
-next deadline is 5200287
-task 2 created at 4800287 with deadline interval 300000
-next deadline is 5100287
-task 3 created at 4800287 with deadline interval 600000
-next deadline is 5400287
-task 4 created at 4800287 with deadline interval 200000
-next deadline is 5000287
-task 5 created at 4800287 with deadline interval 200000
-next deadline is 5000287
-task 7 created at 4800287 with deadline interval 150000
-next deadline is 4950287
--- 4800 T6 1200000
--- 4810 T6 1200000
--- 4820 T6 1200000
--- 4826 T7 1200000
--- 4838 T0 600000
--- 4840 T0 600000
--- 4850 T0 600000
--- 4851 T4 600000
--- 4860 T4 600000
--- 4870 T4 600000
--- 4880 T4 600000
--- 4885 T5 600000
--- 4900 T5 1200000
--- 4910 T5 1200000
--- 4920 T5 1200000
--- 4928 T2 1200000
--- 4940 T2 600000
-task 7 created at 4950602 with deadline interval 150000
-next deadline is 5100602
--- 4950 T2 600000
--- 4960 T2 600000
--- 4970 T2 600000
--- 4972 T7 600000
--- 4980 T7 600000
--- 4985 T1 600000
--- 4990 T1 600000
-task 0 created at 5000658 with deadline interval 200000
-next deadline is 5200658
-task 4 created at 5000658 with deadline interval 200000
-next deadline is 5200658
-task 5 created at 5000658 with deadline interval 200000
-next deadline is 5200658
--- 5000 T1 600000
--- 5010 T1 600000
--- 5020 T1 600000
--- 5030 T1 600000
--- 5032 T0 600000
--- 5040 T0 600000
--- 5044 T4 600000
--- 5050 T4 600000
--- 5060 T4 600000
--- 5070 T4 600000
--- 5079 T5 600000
-task 2 created at 5100574 with deadline interval 300000
-next deadline is 5400574
-task 7 created at 5100574 with deadline interval 150000
-next deadline is 5250574
--- 5100 T5 1200000
--- 5110 T5 1200000
--- 5120 T5 1200000
--- 5121 T7 1200000
--- 5133 T3 600000
--- 5140 T3 600000
--- 5150 T3 600000
--- 5160 T3 600000
--- 5168 T2 600000
--- 5170 T2 600000
--- 5180 T2 600000
--- 5190 T2 600000
-task 0 created at 5200692 with deadline interval 200000
-next deadline is 5400692
-task 1 created at 5200692 with deadline interval 400000
-next deadline is 5600692
-task 4 created at 5200692 with deadline interval 200000
-next deadline is 5400692
-task 5 created at 5200692 with deadline interval 200000
-next deadline is 5400692
--- 5200 T2 600000
--- 5210 T2 600000
--- 5213 T0 600000
--- 5220 T0 600000
--- 5226 T4 600000
--- 5230 T4 600000
--- 5240 T4 600000
-task 7 created at 5250614 with deadline interval 150000
-next deadline is 5400614
--- 5250 T7 600000
--- 5260 T7 600000
--- 5263 T4 600000
--- 5270 T4 600000
--- 5273 T5 600000
--- 5290 T5 1200000
--- 5300 T5 1200000
--- 5310 T5 1200000
--- 5316 T1 1200000
--- 5330 T1 600000
--- 5340 T1 600000
--- 5350 T1 600000
--- 5360 T1 600000
-task 0 created at 5400779 with deadline interval 200000
-next deadline is 5600779
-task 2 created at 5400779 with deadline interval 300000
-next deadline is 5700779
-task 3 created at 5400779 with deadline interval 600000
-next deadline is 6000779
-task 4 created at 5400779 with deadline interval 200000
-next deadline is 5600779
-task 5 created at 5400779 with deadline interval 200000
-next deadline is 5600779
-task 6 created at 5400779 with deadline interval 600000
-next deadline is 6000779
-task 7 created at 5400779 with deadline interval 150000
-next deadline is 5550779
--- 5401 T7 600000
--- 5410 T7 600000
--- 5414 T0 600000
--- 5420 T0 600000
--- 5426 T4 600000
--- 5430 T4 600000
--- 5440 T4 600000
--- 5450 T4 600000
--- 5460 T4 600000
--- 5461 T5 600000
--- 5480 T5 1200000
--- 5490 T5 1200000
--- 5500 T5 1200000
--- 5504 T2 1200000
--- 5520 T2 600000
--- 5530 T2 600000
--- 5540 T2 600000
--- 5548 T3 600000
-task 7 created at 5550606 with deadline interval 150000
-next deadline is 5700606
--- 5550 T7 600000
--- 5560 T7 600000
--- 5563 T3 600000
--- 5570 T3 600000
--- 5580 T3 600000
--- 5590 T3 600000
--- 5595 T6 600000
-task 0 created at 5600687 with deadline interval 200000
-next deadline is 5800687
-task 1 created at 5600687 with deadline interval 400000
-next deadline is 6000687
-task 4 created at 5600687 with deadline interval 200000
-next deadline is 5800687
-task 5 created at 5600687 with deadline interval 200000
-next deadline is 5800687
--- 5600 T0 600000
--- 5610 T0 600000
--- 5613 T4 600000
--- 5620 T4 600000
--- 5630 T4 600000
--- 5640 T4 600000
--- 5647 T5 600000
--- 5650 T5 600000
--- 5660 T5 600000
--- 5670 T5 600000
--- 5680 T5 600000
--- 5690 T5 600000
-task 2 created at 5700646 with deadline interval 300000
-next deadline is 6000646
-task 7 created at 5700646 with deadline interval 150000
-next deadline is 5850646
--- 5700 T5 600000
--- 5710 T5 600000
--- 5720 T5 600000
--- 5730 T5 600000
--- 5734 T7 600000
--- 5740 T7 600000
--- 5747 T2 600000
--- 5750 T2 600000
--- 5760 T2 600000
--- 5770 T2 600000
--- 5780 T2 600000
--- 5790 T2 600000
--- 5792 T1 600000
-task 0 created at 5800655 with deadline interval 200000
-next deadline is 6000655
-task 4 created at 5800655 with deadline interval 200000
-next deadline is 6000655
-task 5 created at 5800655 with deadline interval 200000
-next deadline is 6000655
--- 5800 T0 600000
--- 5810 T0 600000
--- 5813 T4 600000
--- 5820 T4 600000
--- 5830 T4 600000
--- 5840 T4 600000
--- 5847 T5 600000
-task 7 created at 5850621 with deadline interval 150000
-next deadline is 6000621
--- 5850 T7 600000
--- 5860 T7 600000
--- 5863 T5 600000
--- 5870 T5 600000
--- 5880 T5 600000
--- 5890 T5 600000
--- 5900 T5 600000
--- 5910 T5 600000
--- 5920 T5 600000
--- 5930 T5 600000
--- 5940 T5 600000
--- 5946 T1 600000
--- 5960 T1 1200000
--- 5966 T6 1200000
--- 5970 T6 1200000
--- 5980 T6 1200000
-task 0 created at 6000330 with deadline interval 200000
-next deadline is 6200330
-task 1 created at 6000330 with deadline interval 400000
-next deadline is 6400330
-task 2 created at 6000330 with deadline interval 300000
-next deadline is 6300330
-task 3 created at 6000330 with deadline interval 600000
-next deadline is 6600330
-task 4 created at 6000330 with deadline interval 200000
-next deadline is 6200330
-task 5 created at 6000330 with deadline interval 200000
-next deadline is 6200330
-task 7 created at 6000330 with deadline interval 150000
-next deadline is 6150330
+-- 4547 T7 600000
+-- 4553 T6 600000
+-- 4557 T6 600000
+-- 4567 T6 600000
+-- 4577 T6 600000
+-- 4587 T6 600000
+-- 4593 T2 600000
+-- 4597 T2 600000
+-- 4607 T0 600000
+-- 4617 T0 600000
+-- 4619 T4 600000
+-- 4627 T4 600000
+-- 4637 T4 600000
+-- 4647 T4 600000
+-- 4654 T7 600000
+-- 4657 T7 600000
+-- 4666 T5 600000
+-- 4687 T5 1200000
+-- 4697 T5 1200000
+-- 4707 T5 1200000
+-- 4709 T2 1200000
+-- 4727 T2 600000
+-- 4737 T2 600000
+-- 4740 T1 600000
+-- 4757 T1 1200000
+-- 4800 T1 1200000
+-- 4807 T1 1200000
+-- 4817 T1 1200000
+-- 4822 T7 1200000
+-- 4834 T0 600000
+-- 4837 T0 600000
+-- 4847 T0 600000
+-- 4847 T4 600000
+-- 4857 T4 600000
+-- 4867 T4 600000
+-- 4877 T4 600000
+-- 4881 T5 600000
+-- 4897 T5 1200000
+-- 4907 T5 1200000
+-- 4917 T5 1200000
+-- 4924 T2 1200000
+-- 4937 T2 600000
+-- 4947 T2 600000
+-- 4957 T2 600000
+-- 4967 T2 600000
+-- 4968 T7 600000
+-- 4977 T7 600000
+-- 4981 T3 600000
+-- 4987 T3 600000
+-- 4997 T3 600000
+-- 5007 T0 600000
+-- 5017 T0 600000
+-- 5019 T4 600000
+-- 5027 T4 600000
+-- 5037 T4 600000
+-- 5047 T4 600000
+-- 5054 T5 600000
+-- 5057 T5 600000
+-- 5067 T5 600000
+-- 5077 T5 600000
+-- 5087 T5 600000
+-- 5097 T5 600000
+-- 5107 T5 600000
+-- 5117 T5 600000
+-- 5127 T5 600000
+-- 5137 T5 600000
+-- 5140 T7 600000
+-- 5147 T7 600000
+-- 5152 T3 600000
+-- 5157 T3 600000
+-- 5161 T6 600000
+-- 5167 T6 600000
+-- 5177 T6 600000
+-- 5187 T6 600000
+-- 5197 T6 600000
+-- 5207 T6 600000
+-- 5215 T2 600000
+-- 5217 T2 600000
+-- 5227 T2 600000
+-- 5237 T2 600000
+-- 5247 T2 600000
+-- 5257 T7 600000
+-- 5267 T7 600000
+-- 5269 T2 600000
+-- 5273 T0 600000
+-- 5277 T0 600000
+-- 5285 T4 600000
+-- 5287 T4 600000
+-- 5297 T4 600000
+-- 5307 T4 600000
+-- 5317 T4 600000
+-- 5320 T5 600000
+-- 5337 T5 1200000
+-- 5347 T5 1200000
+-- 5357 T5 1200000
+-- 5362 T1 1200000
+-- 5377 T1 600000
+-- 5387 T1 600000
+-- 5397 T1 600000
+-- 5407 T7 600000
+-- 5417 T7 600000
+-- 5420 T1 600000
+-- 5421 T0 600000
+-- 5427 T0 600000
+-- 5434 T4 600000
+-- 5437 T4 600000
+-- 5447 T4 600000
+-- 5457 T4 600000
+-- 5467 T4 600000
+-- 5468 T5 600000
+-- 5487 T5 1200000
+-- 5497 T5 1200000
+-- 5507 T5 1200000
+-- 5511 T2 1200000
+-- 5527 T2 600000
+-- 5537 T2 600000
+-- 5547 T2 600000
+-- 5555 T7 600000
+-- 5557 T7 600000
+-- 5567 T7 600000
+-- 5567 T3 600000
+-- 5577 T3 600000
+-- 5587 T3 600000
+-- 5597 T3 600000
+-- 5602 T0 600000
+-- 5607 T0 600000
+-- 5615 T4 600000
+-- 5617 T4 600000
+-- 5627 T4 600000
+-- 5637 T4 600000
+-- 5647 T4 600000
+-- 5649 T5 600000
+-- 5657 T5 600000
+-- 5667 T5 600000
+-- 5677 T5 600000
+-- 5687 T5 600000
+-- 5697 T5 600000
+-- 5707 T5 600000
+-- 5717 T5 600000
+-- 5727 T5 600000
+-- 5735 T7 600000
+-- 5737 T7 600000
+-- 5747 T7 600000
+-- 5748 T1 600000
+-- 5757 T1 600000
+-- 5767 T1 600000
+-- 5777 T1 600000
+-- 5787 T1 600000
+-- 5794 T2 600000
+-- 5797 T2 600000
+-- 5807 T0 600000
+-- 5817 T0 600000
+-- 5819 T4 600000
+-- 5827 T4 600000
+-- 5837 T4 600000
+-- 5847 T4 600000
+-- 5854 T7 600000
+-- 5857 T7 600000
+-- 5867 T5 600000
+-- 5887 T5 1200000
+-- 5897 T5 1200000
+-- 5907 T5 1200000
+-- 5909 T2 1200000
+-- 5927 T2 600000
+-- 5937 T2 600000
+-- 5941 T6 600000
+-- 5957 T6 1200000
+-- 5967 T6 1200000
 -- 6000 T6 1200000
--- 6010 T6 1200000
--- 6020 T6 1200000
+-- 6007 T6 1200000
+-- 6017 T6 1200000
 -- 6026 T7 1200000
 -- 6038 T0 600000
--- 6040 T0 600000
--- 6050 T0 600000
+-- 6047 T0 600000
 -- 6051 T4 600000
--- 6060 T4 600000
--- 6070 T4 600000
--- 6080 T4 600000
+-- 6057 T4 600000
+-- 6067 T4 600000
+-- 6077 T4 600000
 -- 6085 T5 600000
--- 6100 T5 1200000
--- 6110 T5 1200000
--- 6120 T5 1200000
--- 6128 T2 1200000
--- 6140 T2 600000
-task 7 created at 6150607 with deadline interval 150000
-next deadline is 6300607
--- 6150 T2 600000
--- 6160 T2 600000
--- 6170 T2 600000
--- 6173 T7 600000
--- 6180 T7 600000
--- 6185 T1 600000
--- 6190 T1 600000
-task 0 created at 6200661 with deadline interval 200000
-next deadline is 6400661
-task 4 created at 6200661 with deadline interval 200000
-next deadline is 6400661
-task 5 created at 6200661 with deadline interval 200000
-next deadline is 6400661
--- 6200 T1 600000
--- 6210 T1 600000
--- 6220 T1 600000
--- 6230 T1 600000
--- 6232 T0 600000
--- 6240 T0 600000
--- 6245 T4 600000
--- 6250 T4 600000
--- 6260 T4 600000
--- 6270 T4 600000
--- 6279 T5 600000
-task 2 created at 6300564 with deadline interval 300000
-next deadline is 6600564
-task 7 created at 6300564 with deadline interval 150000
-next deadline is 6450564
--- 6300 T5 1200000
--- 6310 T5 1200000
--- 6320 T5 1200000
--- 6322 T7 1200000
--- 6334 T3 600000
--- 6340 T3 600000
--- 6350 T3 600000
--- 6360 T3 600000
--- 6368 T2 600000
--- 6370 T2 600000
--- 6380 T2 600000
--- 6390 T2 600000
-task 0 created at 6400697 with deadline interval 200000
-next deadline is 6600697
-task 1 created at 6400697 with deadline interval 400000
-next deadline is 6800697
-task 4 created at 6400697 with deadline interval 200000
-next deadline is 6600697
-task 5 created at 6400697 with deadline interval 200000
-next deadline is 6600697
--- 6400 T2 600000
--- 6410 T2 600000
--- 6414 T0 600000
--- 6420 T0 600000
+-- 6107 T5 1200000
+-- 6117 T5 1200000
+-- 6127 T5 1200000
+-- 6127 T2 1200000
+-- 6147 T2 600000
+-- 6157 T2 600000
+-- 6167 T2 600000
+-- 6172 T7 600000
+-- 6177 T7 600000
+-- 6184 T1 600000
+-- 6187 T1 600000
+-- 6197 T1 600000
+-- 6207 T1 600000
+-- 6217 T1 600000
+-- 6227 T1 600000
+-- 6231 T0 600000
+-- 6237 T0 600000
+-- 6244 T4 600000
+-- 6247 T4 600000
+-- 6257 T4 600000
+-- 6267 T4 600000
+-- 6277 T4 600000
+-- 6278 T5 600000
+-- 6297 T5 1200000
+-- 6307 T5 1200000
+-- 6317 T5 1200000
+-- 6321 T7 1200000
+-- 6333 T3 600000
+-- 6337 T3 600000
+-- 6347 T3 600000
+-- 6357 T3 600000
+-- 6367 T3 600000
+-- 6367 T2 600000
+-- 6377 T2 600000
+-- 6387 T2 600000
+-- 6397 T2 600000
+-- 6407 T2 600000
+-- 6412 T0 600000
+-- 6417 T0 600000
+-- 6425 T4 600000
 -- 6427 T4 600000
--- 6430 T4 600000
--- 6440 T4 600000
-task 7 created at 6450622 with deadline interval 150000
-next deadline is 6600622
--- 6450 T7 600000
--- 6460 T7 600000
--- 6463 T4 600000
--- 6470 T4 600000
--- 6474 T5 600000
--- 6490 T5 1200000
--- 6500 T5 1200000
--- 6510 T5 1200000
--- 6517 T1 1200000
--- 6530 T1 600000
--- 6540 T1 600000
--- 6550 T1 600000
--- 6560 T1 600000
-task 0 created at 6600580 with deadline interval 200000
-next deadline is 6800580
-task 2 created at 6600580 with deadline interval 300000
-next deadline is 6900580
-task 3 created at 6600580 with deadline interval 600000
-next deadline is 7200580
-task 4 created at 6600580 with deadline interval 200000
-next deadline is 6800580
-task 5 created at 6600580 with deadline interval 200000
-next deadline is 6800580
-task 6 created at 6600580 with deadline interval 600000
-next deadline is 7200580
-task 7 created at 6600580 with deadline interval 150000
-next deadline is 6750580
--- 6601 T7 600000
--- 6610 T7 600000
+-- 6437 T4 600000
+-- 6447 T4 600000
+-- 6457 T7 600000
+-- 6467 T7 600000
+-- 6469 T4 600000
+-- 6472 T5 600000
+-- 6487 T5 1200000
+-- 6497 T5 1200000
+-- 6507 T5 1200000
+-- 6514 T1 1200000
+-- 6527 T1 600000
+-- 6537 T1 600000
+-- 6547 T1 600000
+-- 6557 T1 600000
+-- 6600 T7 600000
+-- 6607 T7 600000
 -- 6613 T0 600000
--- 6620 T0 600000
+-- 6617 T0 600000
 -- 6626 T4 600000
--- 6630 T4 600000
--- 6640 T4 600000
--- 6650 T4 600000
--- 6660 T4 600000
--- 6661 T5 600000
--- 6680 T5 1200000
--- 6690 T5 1200000
--- 6700 T5 1200000
+-- 6627 T4 600000
+-- 6637 T4 600000
+-- 6647 T4 600000
+-- 6657 T4 600000
+-- 6660 T5 600000
+-- 6677 T5 1200000
+-- 6687 T5 1200000
+-- 6697 T5 1200000
 -- 6703 T2 1200000
--- 6720 T2 600000
--- 6730 T2 600000
--- 6740 T2 600000
+-- 6717 T2 600000
+-- 6727 T2 600000
+-- 6737 T2 600000
 -- 6747 T3 600000
-task 7 created at 6750606 with deadline interval 150000
-next deadline is 6900606
--- 6750 T7 600000
--- 6760 T7 600000
--- 6763 T3 600000
--- 6770 T3 600000
--- 6780 T3 600000
--- 6790 T3 600000
--- 6795 T6 600000
-task 0 created at 6800689 with deadline interval 200000
-next deadline is 7000689
-task 1 created at 6800689 with deadline interval 400000
-next deadline is 7200689
-task 4 created at 6800689 with deadline interval 200000
-next deadline is 7000689
-task 5 created at 6800689 with deadline interval 200000
-next deadline is 7000689
--- 6800 T0 600000
--- 6810 T0 600000
--- 6813 T4 600000
--- 6820 T4 600000
--- 6830 T4 600000
--- 6840 T4 600000
--- 6848 T5 600000
--- 6850 T5 600000
--- 6860 T5 600000
--- 6870 T5 600000
--- 6880 T5 600000
--- 6890 T5 600000
-task 2 created at 6900645 with deadline interval 300000
-next deadline is 7200645
-task 7 created at 6900645 with deadline interval 150000
-next deadline is 7050645
--- 6900 T5 600000
--- 6910 T5 600000
--- 6920 T5 600000
--- 6930 T5 600000
--- 6934 T7 600000
+-- 6757 T7 600000
+-- 6767 T7 600000
+-- 6769 T3 600000
+-- 6777 T3 600000
+-- 6787 T3 600000
+-- 6794 T6 600000
+-- 6797 T6 600000
+-- 6807 T0 600000
+-- 6817 T0 600000
+-- 6819 T4 600000
+-- 6827 T4 600000
+-- 6837 T4 600000
+-- 6847 T4 600000
+-- 6854 T5 600000
+-- 6857 T5 600000
+-- 6867 T5 600000
+-- 6877 T5 600000
+-- 6887 T5 600000
+-- 6897 T5 600000
+-- 6907 T5 600000
+-- 6917 T5 600000
+-- 6927 T5 600000
+-- 6937 T5 600000
 -- 6940 T7 600000
--- 6947 T6 600000
--- 6950 T6 600000
--- 6960 T6 600000
--- 6970 T6 600000
--- 6980 T6 600000
--- 6990 T6 600000
--- 6996 T2 600000
-task 0 created at 7000655 with deadline interval 200000
-next deadline is 7200655
-task 4 created at 7000655 with deadline interval 200000
-next deadline is 7200655
-task 5 created at 7000655 with deadline interval 200000
-next deadline is 7200655
--- 7000 T2 600000
--- 7010 T2 600000
--- 7020 T2 600000
--- 7030 T2 600000
--- 7040 T2 600000
--- 7041 T0 600000
-task 7 created at 7050581 with deadline interval 150000
-next deadline is 7200581
--- 7050 T7 600000
--- 7060 T7 600000
--- 7063 T0 600000
--- 7067 T4 600000
--- 7070 T4 600000
--- 7080 T4 600000
--- 7090 T4 600000
--- 7100 T4 600000
--- 7101 T5 600000
--- 7120 T5 1200000
--- 7130 T5 1200000
--- 7140 T5 1200000
--- 7144 T1 1200000
--- 7150 T1 1200000
--- 7160 T1 1200000
-task 0 created at 7200293 with deadline interval 200000
-next deadline is 7400293
-task 2 created at 7200293 with deadline interval 300000
-next deadline is 7500293
-task 3 created at 7200293 with deadline interval 600000
-next deadline is 7800293
-task 4 created at 7200293 with deadline interval 200000
-next deadline is 7400293
-task 5 created at 7200293 with deadline interval 200000
-next deadline is 7400293
-task 6 created at 7200293 with deadline interval 600000
-next deadline is 7800293
-task 7 created at 7200293 with deadline interval 150000
-next deadline is 7350293
+-- 6947 T7 600000
+-- 6953 T6 600000
+-- 6957 T6 600000
+-- 6967 T6 600000
+-- 6977 T6 600000
+-- 6987 T6 600000
+-- 6994 T2 600000
+-- 6997 T2 600000
+-- 7007 T0 600000
+-- 7017 T0 600000
+-- 7019 T4 600000
+-- 7027 T4 600000
+-- 7037 T4 600000
+-- 7047 T4 600000
+-- 7054 T7 600000
+-- 7057 T7 600000
+-- 7066 T5 600000
+-- 7087 T5 1200000
+-- 7097 T5 1200000
+-- 7107 T5 1200000
+-- 7109 T2 1200000
+-- 7127 T2 600000
+-- 7137 T2 600000
+-- 7140 T1 600000
+-- 7157 T1 1200000
 -- 7200 T1 1200000
--- 7210 T1 1200000
--- 7220 T1 1200000
--- 7223 T7 1200000
--- 7235 T0 600000
--- 7240 T0 600000
+-- 7207 T1 1200000
+-- 7217 T1 1200000
+-- 7222 T7 1200000
+-- 7234 T0 600000
+-- 7237 T0 600000
+-- 7247 T0 600000
 -- 7247 T4 600000
--- 7250 T4 600000
--- 7260 T4 600000
--- 7270 T4 600000
--- 7280 T4 600000
--- 7282 T5 600000
--- 7300 T5 1200000
--- 7310 T5 1200000
--- 7320 T5 1200000
--- 7325 T2 1200000
--- 7340 T2 600000
-task 7 created at 7350606 with deadline interval 150000
-next deadline is 7500606
--- 7350 T2 600000
--- 7360 T2 600000
--- 7369 T7 600000
--- 7370 T7 600000
--- 7380 T7 600000
--- 7382 T3 600000
--- 7390 T3 600000
-task 0 created at 7400657 with deadline interval 200000
-next deadline is 7600657
-task 4 created at 7400657 with deadline interval 200000
-next deadline is 7600657
-task 5 created at 7400657 with deadline interval 200000
-next deadline is 7600657
--- 7400 T0 600000
--- 7410 T0 600000
--- 7413 T4 600000
--- 7420 T4 600000
--- 7430 T4 600000
--- 7440 T4 600000
--- 7447 T5 600000
--- 7450 T5 600000
--- 7460 T5 600000
--- 7470 T5 600000
--- 7480 T5 600000
--- 7490 T5 600000
-task 2 created at 7500647 with deadline interval 300000
-next deadline is 7800647
-task 7 created at 7500647 with deadline interval 150000
-next deadline is 7650647
--- 7500 T5 600000
--- 7510 T5 600000
--- 7520 T5 600000
--- 7530 T5 600000
--- 7534 T7 600000
+-- 7257 T4 600000
+-- 7267 T4 600000
+-- 7277 T4 600000
+-- 7281 T5 600000
+-- 7297 T5 1200000
+-- 7307 T5 1200000
+-- 7317 T5 1200000
+-- 7324 T2 1200000
+-- 7337 T2 600000
+-- 7347 T2 600000
+-- 7357 T2 600000
+-- 7367 T2 600000
+-- 7368 T7 600000
+-- 7377 T7 600000
+-- 7381 T3 600000
+-- 7387 T3 600000
+-- 7397 T3 600000
+-- 7407 T0 600000
+-- 7417 T0 600000
+-- 7419 T4 600000
+-- 7427 T4 600000
+-- 7437 T4 600000
+-- 7447 T4 600000
+-- 7454 T5 600000
+-- 7457 T5 600000
+-- 7467 T5 600000
+-- 7477 T5 600000
+-- 7487 T5 600000
+-- 7497 T5 600000
+-- 7507 T5 600000
+-- 7517 T5 600000
+-- 7527 T5 600000
+-- 7537 T5 600000
 -- 7540 T7 600000
--- 7547 T3 600000
--- 7550 T3 600000
--- 7560 T3 600000
--- 7563 T6 600000
--- 7570 T6 600000
--- 7580 T6 600000
--- 7590 T6 600000
-task 0 created at 7600691 with deadline interval 200000
-next deadline is 7800691
-task 1 created at 7600691 with deadline interval 400000
-next deadline is 8000691
-task 4 created at 7600691 with deadline interval 200000
-next deadline is 7800691
-task 5 created at 7600691 with deadline interval 200000
-next deadline is 7800691
--- 7601 T6 600000
--- 7610 T6 600000
--- 7618 T2 600000
--- 7620 T2 600000
--- 7630 T2 600000
--- 7640 T2 600000
-task 7 created at 7650582 with deadline interval 150000
-next deadline is 7800582
--- 7650 T7 600000
--- 7660 T7 600000
--- 7663 T2 600000
--- 7670 T2 600000
--- 7675 T0 600000
--- 7680 T0 600000
--- 7688 T4 600000
--- 7690 T4 600000
--- 7700 T4 600000
--- 7710 T4 600000
--- 7720 T4 600000
--- 7723 T5 600000
--- 7740 T5 1200000
--- 7750 T5 1200000
--- 7760 T5 1200000
--- 7765 T1 1200000
--- 7780 T1 600000
--- 7790 T1 600000
-task 0 created at 7800941 with deadline interval 200000
-next deadline is 8000941
-task 2 created at 7800941 with deadline interval 300000
-next deadline is 8100941
-task 3 created at 7800941 with deadline interval 600000
-next deadline is 8400941
-task 4 created at 7800941 with deadline interval 200000
-next deadline is 8000941
-task 5 created at 7800941 with deadline interval 200000
-next deadline is 8000941
-task 6 created at 7800941 with deadline interval 600000
-next deadline is 8400941
-task 7 created at 7800941 with deadline interval 150000
-next deadline is 7950941
--- 7801 T7 600000
--- 7810 T7 600000
--- 7814 T1 600000
+-- 7547 T7 600000
+-- 7553 T3 600000
+-- 7557 T3 600000
+-- 7562 T6 600000
+-- 7567 T6 600000
+-- 7577 T6 600000
+-- 7587 T6 600000
+-- 7597 T6 600000
+-- 7607 T6 600000
+-- 7615 T2 600000
+-- 7617 T2 600000
+-- 7627 T2 600000
+-- 7637 T2 600000
+-- 7647 T2 600000
+-- 7657 T7 600000
+-- 7667 T7 600000
+-- 7669 T2 600000
+-- 7673 T0 600000
+-- 7677 T0 600000
+-- 7686 T4 600000
+-- 7687 T4 600000
+-- 7697 T4 600000
+-- 7707 T4 600000
+-- 7717 T4 600000
+-- 7720 T5 600000
+-- 7737 T5 1200000
+-- 7747 T5 1200000
+-- 7757 T5 1200000
+-- 7763 T1 1200000
+-- 7777 T1 600000
+-- 7787 T1 600000
+-- 7797 T1 600000
+-- 7807 T7 600000
+-- 7817 T7 600000
 -- 7820 T1 600000
--- 7825 T0 600000
--- 7830 T0 600000
+-- 7822 T0 600000
+-- 7827 T0 600000
+-- 7834 T4 600000
 -- 7837 T4 600000
--- 7840 T4 600000
--- 7850 T4 600000
--- 7860 T4 600000
--- 7870 T4 600000
--- 7872 T5 600000
--- 7890 T5 1200000
--- 7900 T5 1200000
--- 7910 T5 1200000
--- 7915 T2 1200000
--- 7930 T2 600000
--- 7940 T2 600000
-task 7 created at 7950612 with deadline interval 150000
-next deadline is 8100612
--- 7950 T7 600000
--- 7960 T7 600000
--- 7963 T2 600000
--- 7970 T2 600000
--- 7972 T3 600000
--- 7980 T3 600000
--- 7990 T3 600000
-task 0 created at 8000697 with deadline interval 200000
-next deadline is 8200697
-task 1 created at 8000697 with deadline interval 400000
-next deadline is 8400697
-task 4 created at 8000697 with deadline interval 200000
-next deadline is 8200697
-task 5 created at 8000697 with deadline interval 200000
-next deadline is 8200697
--- 8001 T0 600000
--- 8010 T0 600000
--- 8013 T4 600000
--- 8020 T4 600000
--- 8030 T4 600000
--- 8040 T4 600000
--- 8048 T5 600000
+-- 7847 T4 600000
+-- 7857 T4 600000
+-- 7867 T4 600000
+-- 7869 T5 600000
+-- 7887 T5 1200000
+-- 7897 T5 1200000
+-- 7907 T5 1200000
+-- 7911 T2 1200000
+-- 7927 T2 600000
+-- 7937 T2 600000
+-- 7947 T2 600000
+-- 7955 T7 600000
+-- 7957 T7 600000
+-- 7967 T7 600000
+-- 7968 T3 600000
+-- 7977 T3 600000
+-- 7987 T3 600000
+-- 7997 T3 600000
+-- 8003 T0 600000
+-- 8007 T0 600000
+-- 8016 T4 600000
+-- 8017 T4 600000
+-- 8027 T4 600000
+-- 8037 T4 600000
+-- 8047 T4 600000
 -- 8050 T5 600000
--- 8060 T5 600000
--- 8070 T5 600000
--- 8080 T5 600000
--- 8090 T5 600000
-task 2 created at 8100648 with deadline interval 300000
-next deadline is 8400648
-task 7 created at 8100648 with deadline interval 150000
-next deadline is 8250648
--- 8100 T5 600000
--- 8110 T5 600000
--- 8120 T5 600000
--- 8130 T5 600000
--- 8135 T7 600000
--- 8140 T7 600000
--- 8148 T2 600000
--- 8150 T2 600000
--- 8160 T2 600000
--- 8170 T2 600000
--- 8180 T2 600000
--- 8190 T2 600000
--- 8193 T1 600000
-task 0 created at 8200662 with deadline interval 200000
-next deadline is 8400662
-task 4 created at 8200662 with deadline interval 200000
-next deadline is 8400662
-task 5 created at 8200662 with deadline interval 200000
-next deadline is 8400662
--- 8200 T0 600000
--- 8210 T0 600000
--- 8213 T4 600000
--- 8220 T4 600000
--- 8230 T4 600000
--- 8240 T4 600000
--- 8248 T5 600000
-task 7 created at 8250625 with deadline interval 150000
-next deadline is 8400625
--- 8250 T7 600000
--- 8260 T7 600000
--- 8263 T5 600000
--- 8270 T5 600000
--- 8280 T5 600000
--- 8290 T5 600000
--- 8300 T5 600000
--- 8310 T5 600000
--- 8320 T5 600000
--- 8330 T5 600000
--- 8340 T5 600000
--- 8347 T1 600000
--- 8360 T1 1200000
--- 8367 T3 1200000
--- 8373 T6 600000
--- 8390 T6 1200000
-task 0 created at 8400300 with deadline interval 200000
-next deadline is 8600300
-task 1 created at 8400300 with deadline interval 400000
-next deadline is 8800300
-task 2 created at 8400300 with deadline interval 300000
-next deadline is 8700300
-task 3 created at 8400300 with deadline interval 600000
-next deadline is 9000300
-task 4 created at 8400300 with deadline interval 200000
-next deadline is 8600300
-task 5 created at 8400300 with deadline interval 200000
-next deadline is 8600300
-task 7 created at 8400300 with deadline interval 150000
-next deadline is 8550300
+-- 8057 T5 600000
+-- 8067 T5 600000
+-- 8077 T5 600000
+-- 8087 T5 600000
+-- 8097 T5 600000
+-- 8107 T5 600000
+-- 8117 T5 600000
+-- 8127 T5 600000
+-- 8136 T7 600000
+-- 8137 T7 600000
+-- 8147 T7 600000
+-- 8149 T1 600000
+-- 8157 T1 600000
+-- 8167 T1 600000
+-- 8177 T1 600000
+-- 8187 T1 600000
+-- 8195 T2 600000
+-- 8197 T2 600000
+-- 8207 T0 600000
+-- 8217 T0 600000
+-- 8219 T4 600000
+-- 8227 T4 600000
+-- 8237 T4 600000
+-- 8247 T4 600000
+-- 8254 T7 600000
+-- 8257 T7 600000
+-- 8267 T5 600000
+-- 8287 T5 1200000
+-- 8297 T5 1200000
+-- 8307 T5 1200000
+-- 8309 T2 1200000
+-- 8327 T2 600000
+-- 8337 T2 600000
+-- 8342 T6 600000
+-- 8357 T6 1200000
+-- 8367 T6 1200000
 -- 8400 T6 1200000
--- 8410 T6 1200000
--- 8420 T6 1200000
+-- 8407 T6 1200000
+-- 8417 T6 1200000
 -- 8426 T7 1200000
 -- 8438 T0 600000
--- 8440 T0 600000
--- 8450 T0 600000
+-- 8447 T0 600000
 -- 8451 T4 600000
--- 8460 T4 600000
--- 8470 T4 600000
--- 8480 T4 600000
+-- 8457 T4 600000
+-- 8467 T4 600000
+-- 8477 T4 600000
 -- 8485 T5 600000
--- 8500 T5 1200000
--- 8510 T5 1200000
--- 8520 T5 1200000
--- 8528 T2 1200000
--- 8540 T2 600000
-task 7 created at 8550606 with deadline interval 150000
-next deadline is 8700606
--- 8550 T2 600000
--- 8560 T2 600000
--- 8570 T2 600000
--- 8573 T7 600000
--- 8580 T7 600000
--- 8586 T1 600000
--- 8590 T1 600000
-task 0 created at 8600657 with deadline interval 200000
-next deadline is 8800657
-task 4 created at 8600657 with deadline interval 200000
-next deadline is 8800657
-task 5 created at 8600657 with deadline interval 200000
-next deadline is 8800657
--- 8600 T1 600000
--- 8610 T1 600000
--- 8620 T1 600000
--- 8630 T1 600000
--- 8632 T0 600000
--- 8640 T0 600000
--- 8645 T4 600000
--- 8650 T4 600000
--- 8660 T4 600000
--- 8670 T4 600000
--- 8680 T5 600000
-task 2 created at 8700575 with deadline interval 300000
-next deadline is 9000575
-task 7 created at 8700575 with deadline interval 150000
-next deadline is 8850575
--- 8700 T5 1200000
--- 8710 T5 1200000
--- 8720 T5 1200000
--- 8722 T7 1200000
--- 8734 T3 600000
--- 8740 T3 600000
--- 8750 T3 600000
--- 8760 T3 600000
--- 8769 T2 600000
--- 8770 T2 600000
--- 8780 T2 600000
--- 8790 T2 600000
-task 0 created at 8800698 with deadline interval 200000
-next deadline is 9000698
-task 1 created at 8800698 with deadline interval 400000
-next deadline is 9200698
-task 4 created at 8800698 with deadline interval 200000
-next deadline is 9000698
-task 5 created at 8800698 with deadline interval 200000
-next deadline is 9000698
--- 8801 T2 600000
--- 8810 T2 600000
--- 8814 T0 600000
--- 8820 T0 600000
+-- 8507 T5 1200000
+-- 8517 T5 1200000
+-- 8527 T5 1200000
+-- 8527 T2 1200000
+-- 8547 T2 600000
+-- 8557 T2 600000
+-- 8567 T2 600000
+-- 8572 T7 600000
+-- 8577 T7 600000
+-- 8584 T1 600000
+-- 8587 T1 600000
+-- 8597 T1 600000
+-- 8607 T1 600000
+-- 8617 T1 600000
+-- 8627 T1 600000
+-- 8631 T0 600000
+-- 8637 T0 600000
+-- 8644 T4 600000
+-- 8647 T4 600000
+-- 8657 T4 600000
+-- 8667 T4 600000
+-- 8677 T4 600000
+-- 8678 T5 600000
+-- 8697 T5 1200000
+-- 8707 T5 1200000
+-- 8717 T5 1200000
+-- 8721 T7 1200000
+-- 8733 T3 600000
+-- 8737 T3 600000
+-- 8747 T3 600000
+-- 8757 T3 600000
+-- 8767 T3 600000
+-- 8767 T2 600000
+-- 8777 T2 600000
+-- 8787 T2 600000
+-- 8797 T2 600000
+-- 8807 T2 600000
+-- 8812 T0 600000
+-- 8817 T0 600000
+-- 8825 T4 600000
 -- 8827 T4 600000
--- 8830 T4 600000
--- 8840 T4 600000
-task 7 created at 8850627 with deadline interval 150000
-next deadline is 9000627
--- 8850 T7 600000
--- 8860 T7 600000
--- 8863 T4 600000
--- 8870 T4 600000
--- 8875 T5 600000
--- 8890 T5 1200000
--- 8900 T5 1200000
--- 8910 T5 1200000
--- 8917 T1 1200000
--- 8930 T1 600000
--- 8940 T1 600000
--- 8950 T1 600000
--- 8960 T1 600000
-task 0 created at 9000594 with deadline interval 200000
-next deadline is 9200594
-task 2 created at 9000594 with deadline interval 300000
-next deadline is 9300594
-task 3 created at 9000594 with deadline interval 600000
-next deadline is 9600594
-task 4 created at 9000594 with deadline interval 200000
-next deadline is 9200594
-task 5 created at 9000594 with deadline interval 200000
-next deadline is 9200594
-task 6 created at 9000594 with deadline interval 600000
-next deadline is 9600594
-task 7 created at 9000594 with deadline interval 150000
-next deadline is 9150594
--- 9001 T7 600000
--- 9010 T7 600000
--- 9014 T0 600000
--- 9020 T0 600000
+-- 8837 T4 600000
+-- 8847 T4 600000
+-- 8857 T7 600000
+-- 8867 T7 600000
+-- 8869 T4 600000
+-- 8872 T5 600000
+-- 8887 T5 1200000
+-- 8897 T5 1200000
+-- 8907 T5 1200000
+-- 8915 T1 1200000
+-- 8927 T1 600000
+-- 8937 T1 600000
+-- 8947 T1 600000
+-- 8957 T1 600000
+-- 9000 T7 600000
+-- 9007 T7 600000
+-- 9013 T0 600000
+-- 9017 T0 600000
+-- 9026 T4 600000
 -- 9027 T4 600000
--- 9030 T4 600000
--- 9040 T4 600000
--- 9050 T4 600000
--- 9060 T4 600000
--- 9061 T5 600000
--- 9080 T5 1200000
--- 9090 T5 1200000
--- 9100 T5 1200000
--- 9104 T2 1200000
--- 9120 T2 600000
--- 9130 T2 600000
--- 9140 T2 600000
--- 9148 T3 600000
-task 7 created at 9150611 with deadline interval 150000
-next deadline is 9300611
--- 9150 T7 600000
--- 9160 T7 600000
--- 9163 T3 600000
--- 9170 T3 600000
--- 9180 T3 600000
--- 9190 T3 600000
--- 9196 T6 600000
-task 0 created at 9200703 with deadline interval 200000
-next deadline is 9400703
-task 1 created at 9200703 with deadline interval 400000
-next deadline is 9600703
-task 4 created at 9200703 with deadline interval 200000
-next deadline is 9400703
-task 5 created at 9200703 with deadline interval 200000
-next deadline is 9400703
--- 9201 T0 600000
--- 9210 T0 600000
--- 9213 T4 600000
--- 9220 T4 600000
--- 9230 T4 600000
--- 9240 T4 600000
--- 9248 T5 600000
--- 9250 T5 600000
--- 9260 T5 600000
--- 9270 T5 600000
--- 9280 T5 600000
--- 9290 T5 600000
-task 2 created at 9300651 with deadline interval 300000
-next deadline is 9600651
-task 7 created at 9300651 with deadline interval 150000
-next deadline is 9450651
--- 9300 T5 600000
--- 9310 T5 600000
--- 9320 T5 600000
--- 9330 T5 600000
--- 9335 T7 600000
+-- 9037 T4 600000
+-- 9047 T4 600000
+-- 9057 T4 600000
+-- 9060 T5 600000
+-- 9077 T5 1200000
+-- 9087 T5 1200000
+-- 9097 T5 1200000
+-- 9102 T2 1200000
+-- 9117 T2 600000
+-- 9127 T2 600000
+-- 9137 T2 600000
+-- 9147 T2 600000
+-- 9147 T3 600000
+-- 9157 T7 600000
+-- 9167 T7 600000
+-- 9169 T3 600000
+-- 9177 T3 600000
+-- 9187 T3 600000
+-- 9194 T6 600000
+-- 9197 T6 600000
+-- 9207 T0 600000
+-- 9217 T0 600000
+-- 9219 T4 600000
+-- 9227 T4 600000
+-- 9237 T4 600000
+-- 9247 T4 600000
+-- 9254 T5 600000
+-- 9257 T5 600000
+-- 9267 T5 600000
+-- 9277 T5 600000
+-- 9287 T5 600000
+-- 9297 T5 600000
+-- 9307 T5 600000
+-- 9317 T5 600000
+-- 9327 T5 600000
+-- 9337 T5 600000
 -- 9340 T7 600000
--- 9348 T6 600000
--- 9350 T6 600000
--- 9360 T6 600000
--- 9370 T6 600000
--- 9380 T6 600000
--- 9390 T6 600000
+-- 9347 T7 600000
+-- 9353 T6 600000
+-- 9357 T6 600000
+-- 9367 T6 600000
+-- 9377 T6 600000
+-- 9387 T6 600000
+-- 9394 T2 600000
 -- 9397 T2 600000
-task 0 created at 9400663 with deadline interval 200000
-next deadline is 9600663
-task 4 created at 9400663 with deadline interval 200000
-next deadline is 9600663
-task 5 created at 9400663 with deadline interval 200000
-next deadline is 9600663
--- 9400 T2 600000
--- 9410 T2 600000
--- 9420 T2 600000
--- 9430 T2 600000
--- 9440 T2 600000
--- 9443 T0 600000
-task 7 created at 9450580 with deadline interval 150000
-next deadline is 9600580
--- 9450 T7 600000
--- 9460 T7 600000
--- 9463 T0 600000
--- 9468 T4 600000
--- 9470 T4 600000
--- 9480 T4 600000
--- 9490 T4 600000
--- 9500 T4 600000
--- 9503 T5 600000
--- 9520 T5 1200000
--- 9530 T5 1200000
--- 9540 T5 1200000
--- 9546 T1 1200000
--- 9550 T1 1200000
--- 9560 T1 1200000
-task 0 created at 9600286 with deadline interval 200000
-next deadline is 9800286
-task 2 created at 9600286 with deadline interval 300000
-next deadline is 9900286
-task 3 created at 9600286 with deadline interval 600000
-next deadline is 10200286
-task 4 created at 9600286 with deadline interval 200000
-next deadline is 9800286
-task 5 created at 9600286 with deadline interval 200000
-next deadline is 9800286
-task 6 created at 9600286 with deadline interval 600000
-next deadline is 10200286
-task 7 created at 9600286 with deadline interval 150000
-next deadline is 9750286
+-- 9407 T0 600000
+-- 9417 T0 600000
+-- 9419 T4 600000
+-- 9427 T4 600000
+-- 9437 T4 600000
+-- 9447 T4 600000
+-- 9454 T7 600000
+-- 9457 T7 600000
+-- 9467 T5 600000
+-- 9487 T5 1200000
+-- 9497 T5 1200000
+-- 9507 T5 1200000
+-- 9509 T2 1200000
+-- 9527 T2 600000
+-- 9537 T2 600000
+-- 9541 T1 600000
+-- 9557 T1 1200000
 -- 9600 T1 1200000
--- 9610 T1 1200000
--- 9620 T1 1200000
--- 9623 T7 1200000
--- 9635 T0 600000
--- 9640 T0 600000
--- 9648 T4 600000
--- 9650 T4 600000
--- 9660 T4 600000
--- 9670 T4 600000
--- 9680 T4 600000
--- 9682 T5 600000
--- 9700 T5 1200000
--- 9710 T5 1200000
--- 9720 T5 1200000
--- 9725 T2 1200000
--- 9740 T2 600000
-task 7 created at 9750609 with deadline interval 150000
-next deadline is 9900609
--- 9750 T2 600000
--- 9760 T2 600000
--- 9769 T7 600000
--- 9770 T7 600000
--- 9780 T7 600000
--- 9782 T3 600000
--- 9790 T3 600000
-task 0 created at 9800671 with deadline interval 200000
-next deadline is 10000671
-task 4 created at 9800671 with deadline interval 200000
-next deadline is 10000671
-task 5 created at 9800671 with deadline interval 200000
-next deadline is 10000671
--- 9801 T0 600000
--- 9810 T0 600000
--- 9813 T4 600000
--- 9820 T4 600000
--- 9830 T4 600000
--- 9840 T4 600000
--- 9848 T5 600000
--- 9850 T5 600000
--- 9860 T5 600000
--- 9870 T5 600000
--- 9880 T5 600000
--- 9890 T5 600000
-task 2 created at 9900653 with deadline interval 300000
-next deadline is 10200653
-task 7 created at 9900653 with deadline interval 150000
-next deadline is 10050653
--- 9900 T5 600000
--- 9910 T5 600000
--- 9920 T5 600000
--- 9930 T5 600000
--- 9935 T7 600000
+-- 9607 T1 1200000
+-- 9617 T1 1200000
+-- 9622 T7 1200000
+-- 9634 T0 600000
+-- 9637 T0 600000
+-- 9647 T0 600000
+-- 9647 T4 600000
+-- 9657 T4 600000
+-- 9667 T4 600000
+-- 9677 T4 600000
+-- 9681 T5 600000
+-- 9697 T5 1200000
+-- 9707 T5 1200000
+-- 9717 T5 1200000
+-- 9724 T2 1200000
+-- 9737 T2 600000
+-- 9747 T2 600000
+-- 9757 T2 600000
+-- 9767 T2 600000
+-- 9768 T7 600000
+-- 9777 T7 600000
+-- 9781 T3 600000
+-- 9787 T3 600000
+-- 9797 T3 600000
+-- 9807 T0 600000
+-- 9817 T0 600000
+-- 9819 T4 600000
+-- 9827 T4 600000
+-- 9837 T4 600000
+-- 9847 T4 600000
+-- 9854 T5 600000
+-- 9857 T5 600000
+-- 9867 T5 600000
+-- 9877 T5 600000
+-- 9887 T5 600000
+-- 9897 T5 600000
+-- 9907 T5 600000
+-- 9917 T5 600000
+-- 9927 T5 600000
+-- 9937 T5 600000
 -- 9940 T7 600000
--- 9948 T3 600000
--- 9950 T3 600000
--- 9960 T3 600000
--- 9965 T6 600000
--- 9970 T6 600000
--- 9980 T6 600000
--- 9990 T6 600000
-TA GRADE,	Energy,	4649639450	Missed,1
+-- 9947 T7 600000
+-- 9953 T3 600000
+-- 9957 T3 600000
+-- 9962 T6 600000
+-- 9967 T6 600000
+-- 9977 T6 600000
+-- 9987 T6 600000
+-- 9997 T6 600000
+TA GRADE,	Energy,	4643802600	Missed,0
 Scheduler program finished.
