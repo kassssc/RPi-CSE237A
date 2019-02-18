@@ -1,7 +1,6 @@
 #include "assignment1.h"
 #include <stdio.h>
 #include <wiringPi.h>
-#include <softTone.h>
 #include <softPwm.h>
 #include <stdint.h>
 
@@ -25,6 +24,8 @@ void init_sensors(SharedVariable* sv) {
 	softPwmCreate(PIN_SMD_RED, 0, 0xFF);
 	softPwmCreate(PIN_SMD_GRN, 0, 0xFF);
 	softPwmCreate(PIN_SMD_BLU, 0, 0xFF);
+	// Init buzzer
+	softPwmCreate(PIN_BUZZER, 0, 100);
 
 	pinMode(PIN_BUTTON, INPUT);
 	pinMode(PIN_BIG, INPUT);
@@ -32,9 +33,6 @@ void init_sensors(SharedVariable* sv) {
 	pinMode(PIN_TOUCH, INPUT);
 	pinMode(PIN_ALED, OUTPUT);
 	pinMode(PIN_BUZZER, OUTPUT);
-
-	digitalWrite(PIN_ALED, HIGH);
-	softToneCreate(PIN_BUZZER);
 }
 
 void body_button(SharedVariable* sv) {
@@ -142,7 +140,7 @@ void body_buzzer(SharedVariable* sv) {
 		counter = 0;
 	}
 	if (buzzing) {
-		softToneWrite(PIN_BUZZER, 2000);
+		softPwmWrite(PIN_BUZZER, 80);
 		counter++;
 		// Buzzed for 0.5s already
 		if (counter > 500) {
@@ -150,6 +148,6 @@ void body_buzzer(SharedVariable* sv) {
 			buzzing = 0;
 		}
 	} else {
-		softToneWrite(PIN_BUZZER, 0);
+		softPwmWrite(PIN_BUZZER, 0);
 	}
 }

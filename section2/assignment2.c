@@ -44,7 +44,6 @@ void learn_workloads(SharedVariable* sv) {
 		end_time = get_current_time_us();
 		dur = end_time - start_time;
 		sv->avg_runtime[0] += dur;
-//		printf("button thread: %lld\n", dur);
 
 		// Three Color
 		start_time = get_current_time_us();
@@ -52,7 +51,6 @@ void learn_workloads(SharedVariable* sv) {
 		end_time = get_current_time_us();
 		dur = end_time - start_time;
 		sv->avg_runtime[1] += dur;
-//		printf("RGB thread: %lld\n", dur);
 
 		// Big
 		start_time = get_current_time_us();
@@ -60,7 +58,6 @@ void learn_workloads(SharedVariable* sv) {
 		end_time = get_current_time_us();
 		dur = end_time - start_time;
 		sv->avg_runtime[2] += dur;
-//		printf("big thread: %lld\n", dur);
 
 		// Small
 		start_time = get_current_time_us();
@@ -68,7 +65,6 @@ void learn_workloads(SharedVariable* sv) {
 		end_time = get_current_time_us();
 		dur = end_time - start_time;
 		sv->avg_runtime[3] += dur;
-//		printf("small thread: %lld\n", dur);
 
 		// Touch
 		start_time = get_current_time_us();
@@ -76,7 +72,6 @@ void learn_workloads(SharedVariable* sv) {
 		end_time = get_current_time_us();
 		dur = end_time - start_time;
 		sv->avg_runtime[4] += dur;
-//		printf("touch thread: %lld\n", dur);
 
 		// RGB Color
 		start_time = get_current_time_us();
@@ -84,7 +79,6 @@ void learn_workloads(SharedVariable* sv) {
 		end_time = get_current_time_us();
 		dur = end_time - start_time;
 		sv->avg_runtime[5] += dur;
-//		printf("SMD RGB thread: %lld\n", dur);
 
 		// ALED
 		start_time = get_current_time_us();
@@ -92,7 +86,6 @@ void learn_workloads(SharedVariable* sv) {
 		end_time = get_current_time_us();
 		dur = end_time - start_time;
 		sv->avg_runtime[6] += dur;
-//		printf("ALED thread: %lld\n", dur);
 
 		// Buzzer
 		start_time = get_current_time_us();
@@ -100,7 +93,6 @@ void learn_workloads(SharedVariable* sv) {
 		end_time = get_current_time_us();
 		dur = end_time - start_time;
 		sv->avg_runtime[7] += dur;
-//		printf("buzzer thread: %lld\n", end_time - start_time);
 	}
 
 	for (i = 0; i < 8; i++) {
@@ -165,32 +157,23 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	exec_time[chosen] += 10000;
 
   	int i;
-	for (int i = 0; i < 8; i++) {
-//		printDBG("%d ", aliveTasks[i]);
-	}
 	int task_added = 0;
 	// Identify newly created tasks, and record the next deadline coming up
 	for (i = 0; i < 8; i++) {
 		// Previously was dead, now alive
 		if (!prev_alive[i] && aliveTasks[i]) {
-			
 			sv->next_deadline[i] = curr_time + workloadDeadlines[i];
 			task_added = 1;
 			exec_time[i] = 0;
 		}
 	}
 	
+	// Select new task if either new task appeared or old task died	
 	if (task_added || !aliveTasks[chosen]) {
 		chosen = -1;	
 		long long earliest_deadline = 9223372036854775807; // max long long value
 		for (i = 0; i < 8; i++) {
 			if (aliveTasks[i]) {
-	  			// If a task missed its deadline, schedule immediately
-  				/*if (curr_time > sv->next_deadline[i]) {
-					//printDBG("%d just missed deadline, scheduling now\n", i);
-  					chosen = i;
-  					break;
-  				}*/
 				if (sv->next_deadline[i] < earliest_deadline) {
   					chosen = i;
 					earliest_deadline = sv->next_deadline[chosen];
@@ -203,21 +186,8 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	sel.task = chosen;
 	long long projected = curr_time + sv->avg_runtime[chosen] - exec_time[chosen];
 	long long slack = sv->next_deadline[chosen] - projected; 
-//	long long thrshld = (long long) ( ((double)sv->avg_runtime[chosen]) * 1.25);
 	long long thrshld = sv->avg_runtime[chosen] * 2; 
 	
-	/*/	
-	printDBG("\n");
-	printDBG("next deadline: %lld\n", sv->next_deadline[chosen]);
-	printDBG("curr time : %lld\n", curr_time);
-	printDBG("treshold: %lld\n", thrshld);
-	printDBG("projected: %lld\n", projected);
-	printDBG("slack: %lld\n", slack);
-	printDBG("exec time: %lld\n", exec_time[chosen]);
-	printDBG("chose %d to run\n", chosen);
-	printDBG("\n");
-	//*/
-
 	if (slack > thrshld) {
 		sel.freq = 0;
 	} else {
